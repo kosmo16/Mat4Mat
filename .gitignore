@@ -1,0 +1,17 @@
+[Ll]ibrary/
+[Ll]ogs/
+[Oo]bj/
+/[Ss]aves/
+[Tt]emp/
+StyleCopViolations.xml
+Tools/StyleCopRunner/StyleCopViolations.xml
+/Assets/HUD Text/Examples/Terrain/Terrain.asset
+/Assets/Materials/Particles/Smokes/CloudFunnel.mat
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.pidb
+*.userprefs
+*.orig
+*.orig.meta
