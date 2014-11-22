@@ -1,13 +1,16 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Components;
+using UnityEngine;
 
-public class TestSystem : Framework.Core.System
+namespace Systems
 {
-	public override void OnUpdate ()
-	{
-		foreach (TestComponent tc in GetListOf<TestComponent>())
-		{
-			tc.transform.position += tc.speed * Vector3.up;
-		}
-	}
+    public class TestSystem : Framework.Core.System
+    {
+        public override void OnUpdate()
+        {
+            foreach (TestComponent tc in GetListOf<TestComponent>())
+            {
+                tc.transform.position += tc.speed * Vector3.up;
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class TestComponent : Framework.Core.SystemComponent {
-
-	public float speed;
+﻿namespace Components
+{
+    public class TestComponent : Framework.Core.SystemComponent
+    {
+        public float speed;
+    }
 }
