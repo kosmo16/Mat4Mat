@@ -42,3 +42,11 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Ground
+    userID: 1
+    uniqueID: 3737643545
+    locked: 0
+  - name: Obstacles
+    userID: 2
+    uniqueID: 1489654901
+    locked: 0
