@@ -19,6 +19,7 @@ namespace Systems
             if (Input.GetButtonDown("Fire1"))
             {
                 player.currentBehaviour = (player.currentBehaviour + 1) % player.behaviours.Length;
+                player.rigidbody.mass = player.behaviours[player.currentBehaviour].mass;
             }
         }
 
