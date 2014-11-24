@@ -5,7 +5,7 @@ namespace Systems
 {
     public class TestSystem : Framework.Core.System
     {
-        public override void OnUpdate()
+        public override void OnFixedUpdate()
         {
             foreach (TestComponent tc in GetListOf<TestComponent>())
             {

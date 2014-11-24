@@ -9,7 +9,7 @@ namespace Systems
 {
     public class CameraFollowerSystem : Framework.Core.System
     {
-        public override void OnUpdate()
+        public override void OnFixedUpdate()
         {
             FollowPlayer(GetFirstOrNull<CameraFollower>());
         }
@@ -17,17 +17,16 @@ namespace Systems
         private void FollowPlayer(CameraFollower follower)
         {
             float targetX = Mathf.Lerp(
-                transform.position.x,
+                follower.transform.position.x,
                 follower.player.position.x,
                 follower.xSmooth * DeltaTime);
 
             float targetY = Mathf.Lerp(
-                transform.position.y,
+                follower.transform.position.y,
                 follower.player.position.y,
                 follower.ySmooth * DeltaTime);
 
             follower.transform.position = new Vector3(targetX, targetY, follower.transform.position.z);
         }
-
     }
 }

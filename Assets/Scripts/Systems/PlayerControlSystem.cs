@@ -6,7 +6,7 @@ namespace Systems
 {
     public class PlayerControlSystem : Framework.Core.System
     {
-        public override void OnUpdate()
+        public override void OnFixedUpdate()
         {
             Player player = GetFirstOrNull<Player>();
             Move(player.rigidbody, player.behaviours[player.currentBehaviour]);
