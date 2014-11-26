@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
-  - 58: {fileID: 5800000}
   - 212: {fileID: 21200000}
-  m_Layer: 11
-  m_Name: rock
+  - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: paperPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.236049339, y: -4.12669897, z: 0}
-  m_LocalScale: {x: 1.41432464, y: 1.37896788, z: 2.85524297}
+  m_LocalPosition: {x: -3.07608128, y: -4.1536293, z: 0}
+  m_LocalScale: {x: .293658048, y: .293658227, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5800000
-CircleCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -39,8 +39,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: .174999997
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 1.5, y: 1}
+  m_Center: {x: -.100000001, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   score: 0
-  behaviour: {fileID: 11400000, guid: 38e32370463c4794783e20c34091ce8e, type: 2}
+  behaviour: {fileID: 11400000, guid: 2cef23a60394ede4494d7f0b865ccdd4, type: 2}
   collisionWithPlayer: 0
 --- !u!212 &21200000
 SpriteRenderer:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2259184375
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5c3e6f7daa11c46499ab9281d251d1c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac5868116f633584d9a89567bc9189ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -6,11 +6,11 @@ namespace Systems
 {
     public class PlayerControlSystem : Framework.Core.System
     {
-        public override void OnFixedUpdate()
+        public override void OnUpdate()
         {
             Player player = GetFirstOrNull<Player>();
-            Move(player);
             Jump(player.rigidbody, player.behaviour);
+            Move(player);
         }
 
         private void Move(Player player)
@@ -39,6 +39,7 @@ namespace Systems
         {
             if (Input.GetButtonDown("Jump"))
             {
+                Debug.Log("jump");
                 rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
             }
         }
