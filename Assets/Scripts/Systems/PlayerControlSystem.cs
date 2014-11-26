@@ -9,18 +9,8 @@ namespace Systems
         public override void OnFixedUpdate()
         {
             Player player = GetFirstOrNull<Player>();
-            Move(player.rigidbody, player.behaviours[player.currentBehaviour]);
-            Jump(player.rigidbody, player.behaviours[player.currentBehaviour]);
-            NextBehaviour(player);
-        }
-
-        private void NextBehaviour(Player player)
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                player.currentBehaviour = (player.currentBehaviour + 1) % player.behaviours.Length;
-                player.rigidbody.mass = player.behaviours[player.currentBehaviour].mass;
-            }
+            Move(player.rigidbody, player.behaviour);
+            Jump(player.rigidbody, player.behaviour);
         }
 
         private void Move(Rigidbody2D rigidbody, PhysicsBehaviour behaviour)

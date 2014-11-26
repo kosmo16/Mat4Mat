@@ -12,6 +12,6 @@ namespace Content
         public float mass;
 
         [Header("Special")]
-        public float canDestroyObstacles;
+        public bool canDestroyObstacles;
     }
 }

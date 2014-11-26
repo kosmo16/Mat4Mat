@@ -15,4 +15,4 @@ MonoBehaviour:
   jumpForce: 500
   maxSpeed: 5
   mass: 1
-  canDestroyObstacles: 0
+  canDestroyObstacles: 1

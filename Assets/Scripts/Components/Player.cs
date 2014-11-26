@@ -7,7 +7,6 @@ namespace Components
     public class Player : SystemComponent
     {
         public Rigidbody2D rigidbody;
-        public PhysicsBehaviour[] behaviours;
-        public int currentBehaviour;
+        public PhysicsBehaviour behaviour;
     }
 }
