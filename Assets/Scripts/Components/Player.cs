@@ -8,6 +8,8 @@ namespace Components
     {
         public Rigidbody2D rigidbody;
         public PhysicsBehaviour behaviour;
+        public ThunderSpawner thunderSpawner;
         public int score;
+        public bool facingRight;
     }
 }

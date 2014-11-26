@@ -74,6 +74,46 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &10258820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 10258821}
+  - 114: {fileID: 10258822}
+  m_Layer: 0
+  m_Name: ThunderSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &10258821
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10258820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1096499937}
+  m_RootOrder: 0
+--- !u!114 &10258822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 10258820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04fbc28e26e03f42a79dbaac30cbb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thunderPrefab: {fileID: 11400000, guid: ce8e3b5e88b98e5488cf6b948bd00b91, type: 2}
 --- !u!1001 &41847534
 Prefab:
   m_ObjectHideFlags: 0
@@ -176,6 +216,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 42c53adc82210db4d82edd5ab4d9ce03, type: 2}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 42c53adc82210db4d82edd5ab4d9ce03, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6100000, guid: 42c53adc82210db4d82edd5ab4d9ce03, type: 2}
@@ -549,7 +593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 565678728}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &381479082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,11 +726,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1151243999}
   - {fileID: 1237187904}
   - {fileID: 1042970886}
   - {fileID: 657820255}
   - {fileID: 381479081}
+  - {fileID: 1198591400}
   m_Father: {fileID: 1364528604}
   m_RootOrder: 0
 --- !u!1 &627990498
@@ -703,7 +747,7 @@ GameObject:
   - 58: {fileID: 627990500}
   m_Layer: 0
   m_Name: rat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,7 +855,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 565678728}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &657820256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,7 +1302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 565678728}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1042970887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,7 +1406,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.97267699, y: -3.50090361, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 10258821}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!114 &1096499938
@@ -1378,7 +1423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1096499941}
   behaviour: {fileID: 11400000, guid: 2cef23a60394ede4494d7f0b865ccdd4, type: 2}
+  thunderSpawner: {fileID: 10258822}
   score: 0
+  facingRight: 0
 --- !u!58 &1096499939
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1427,45 +1474,6 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!1 &1151243998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1151243999}
-  - 114: {fileID: 1151244000}
-  m_Layer: 0
-  m_Name: TestSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1151243999
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1151243998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 565678728}
-  m_RootOrder: 0
---- !u!114 &1151244000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1151243998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb35ebd44d90574eb5f68c858dd268b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1162050450
 Prefab:
   m_ObjectHideFlags: 0
@@ -1514,6 +1522,45 @@ Prefab:
   m_RootGameObject: {fileID: 839346344}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1198591399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1198591400}
+  - 114: {fileID: 1198591401}
+  m_Layer: 0
+  m_Name: ThunderSpawningSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1198591400
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198591399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 565678728}
+  m_RootOrder: 4
+--- !u!114 &1198591401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198591399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b4dbac97631764da6a8c4c5f9d73dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237187902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1599,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 565678728}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &1361161068
 Prefab:
   m_ObjectHideFlags: 0

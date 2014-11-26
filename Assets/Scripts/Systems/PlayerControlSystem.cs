@@ -9,14 +9,24 @@ namespace Systems
         public override void OnFixedUpdate()
         {
             Player player = GetFirstOrNull<Player>();
-            Move(player.rigidbody, player.behaviour);
+            Move(player);
             Jump(player.rigidbody, player.behaviour);
         }
 
-        private void Move(Rigidbody2D rigidbody, PhysicsBehaviour behaviour)
+        private void Move(Player player)
         {
+            Rigidbody2D rigidbody = player.rigidbody;
+            PhysicsBehaviour behaviour = player.behaviour;
             float h = Input.GetAxis("Horizontal");
             rigidbody.AddForce(Vector2.right * h * behaviour.moveForce);
+            if (h > 0.0f)
+            {
+                player.facingRight = true;
+            }
+            else if (h < 0.0f)
+            {
+                player.facingRight = false;
+            }
 
             if (Mathf.Abs(rigidbody.velocity.x) > behaviour.maxSpeed)
             {

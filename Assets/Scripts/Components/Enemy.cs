@@ -18,8 +18,6 @@ namespace Components
         {
             if (collision.gameObject.tag == "Obstacles")
             {
-                Debug.Log("asdsad");
-
                 foreach (ContactPoint2D point in collision.contacts)
                 {
                     Vector2 vector = point.point - new Vector2(transform.position.x, transform.position.y);
@@ -32,6 +30,8 @@ namespace Components
                     {
                         rigidbody.velocity = new Vector2(speed, 0.0f);
                     }
+
+                    break;
                 }
             }
             else if (collision.gameObject.tag == "Player")
