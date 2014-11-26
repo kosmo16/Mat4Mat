@@ -11,6 +11,18 @@ namespace Systems
             {
                 if (collectible.collisionWithPlayer)
                 {
+                    Player player = GetFirstOrNull<Player>();
+
+                    if (collectible.type == CollectibleType.Transform)
+                    {
+                        player.behaviour = collectible.behaviour;
+                        player.rigidbody.mass = player.behaviour.mass;
+                    }
+                    else if (collectible.type == CollectibleType.Coin)
+                    {
+                        player.score++;
+                    }
+
                     GameObject.Destroy(collectible.gameObject);
                 }
             }

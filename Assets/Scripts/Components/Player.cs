@@ -8,5 +8,6 @@ namespace Components
     {
         public Rigidbody2D rigidbody;
         public PhysicsBehaviour behaviour;
+        public int score;
     }
 }

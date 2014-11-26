@@ -250,48 +250,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1 &142052855
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 142052856}
-  - 114: {fileID: 142052857}
-  m_Layer: 0
-  m_Name: DestructibleSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &142052856
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 142052855}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 565678728}
-  m_RootOrder: 4
---- !u!114 &142052857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 142052855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82848e7275b5fa84fbdba4c7ce2972c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: {fileID: 0}
-  <CurrentExecutionOrder>k__BackingField: 0
-  <UpdatedObjects>k__BackingField: 0
 --- !u!1001 &262239665
 Prefab:
   m_ObjectHideFlags: 0
@@ -447,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb190487b91404442afa2e17e9d99394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 0, y: 12}
+  force: {x: 0, y: 1.5}
 --- !u!61 &277432602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -620,7 +578,6 @@ Transform:
   - {fileID: 1237187904}
   - {fileID: 1042970886}
   - {fileID: 657820255}
-  - {fileID: 142052856}
   m_Father: {fileID: 1364528604}
   m_RootOrder: 0
 --- !u!1 &657820254
@@ -1213,6 +1170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1096499941}
   behaviour: {fileID: 11400000, guid: 2cef23a60394ede4494d7f0b865ccdd4, type: 2}
+  score: 0
 --- !u!58 &1096499939
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1252,7 +1210,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1096499936}
-  m_Mass: 1
+  m_Mass: .100000001
   m_LinearDrag: 2
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -1577,6 +1535,10 @@ Prefab:
     - target: {fileID: 400000, guid: afd80ad5f017a9d4db969aa6eca80663, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: afd80ad5f017a9d4db969aa6eca80663, type: 2}
+      propertyPath: force.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afd80ad5f017a9d4db969aa6eca80663, type: 2}

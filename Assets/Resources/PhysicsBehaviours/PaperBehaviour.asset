@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: PaperBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 50
-  jumpForce: 500
+  moveForce: 5
+  jumpForce: 50
   maxSpeed: 5
   mass: .100000001
   canDestroyObstacles: 0
