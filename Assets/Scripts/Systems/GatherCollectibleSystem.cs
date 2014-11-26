@@ -17,6 +17,7 @@ namespace Systems
                     {
                         player.behaviour = collectible.behaviour;
                         player.rigidbody.mass = player.behaviour.mass;
+                        player.rigidbody.Sleep();
                     }
                     else if (collectible.type == CollectibleType.Coin)
                     {

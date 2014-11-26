@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: RubberBehaviour
   m_EditorClassIdentifier: 
   moveForce: 50
-  jumpForce: 1000
+  jumpForce: 1200
   maxSpeed: 5
   mass: 1
   material: {fileID: 0}

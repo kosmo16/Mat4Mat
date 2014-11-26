@@ -9,7 +9,7 @@ namespace Systems
 {
     public class CameraFollowerSystem : Framework.Core.System
     {
-        public override void OnFixedUpdate()
+        public override void OnUpdate()
         {
             FollowPlayer(GetFirstOrNull<CameraFollower>());
         }
@@ -25,6 +25,9 @@ namespace Systems
                 follower.transform.position.y,
                 follower.player.position.y,
                 follower.ySmooth * DeltaTime);
+
+            targetX = Mathf.Clamp(targetX, follower.minX, follower.maxX);
+            targetY = Mathf.Clamp(targetY, follower.minY, float.MaxValue);
 
             follower.transform.position = new Vector3(targetX, targetY, follower.transform.position.z);
         }

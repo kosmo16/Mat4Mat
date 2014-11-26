@@ -39,7 +39,6 @@ namespace Systems
         {
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("jump");
                 rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
             }
         }

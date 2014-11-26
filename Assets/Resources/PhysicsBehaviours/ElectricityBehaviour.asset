@@ -17,6 +17,6 @@ MonoBehaviour:
   mass: 1
   material: {fileID: 0}
   canDestroyObstacles: 0
-  canSpawnThunders: 0
-  canDash: 0
+  canSpawnThunders: 1
+  canDash: 1
   canSwim: 0

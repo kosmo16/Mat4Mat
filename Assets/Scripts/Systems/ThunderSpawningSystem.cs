@@ -15,15 +15,18 @@ namespace Systems
             {
                 Player player = GetFirstOrNull<Player>();
 
-                if (player.facingRight)
+                if (player.behaviour.canSpawnThunders)
                 {
-                    Thunder thunder = Instantiate(player.thunderSpawner.thunderPrefab, player.thunderSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, 90f))) as Thunder;
-                    thunder.rigidbody.velocity = new Vector2(thunder.speed, 0);
-                }
-                else
-                {
-                    Thunder thunder = Instantiate(player.thunderSpawner.thunderPrefab, player.thunderSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, -90f))) as Thunder;
-                    thunder.rigidbody.velocity = new Vector2(-thunder.speed, 0);
+                    if (player.facingRight)
+                    {
+                        Thunder thunder = Instantiate(player.thunderSpawner.thunderPrefab, player.thunderSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, 90f))) as Thunder;
+                        thunder.rigidbody.velocity = new Vector2(thunder.speed, 0);
+                    }
+                    else
+                    {
+                        Thunder thunder = Instantiate(player.thunderSpawner.thunderPrefab, player.thunderSpawner.transform.position, Quaternion.Euler(new Vector3(0, 0, -90f))) as Thunder;
+                        thunder.rigidbody.velocity = new Vector2(-thunder.speed, 0);
+                    }
                 }
             }
         }

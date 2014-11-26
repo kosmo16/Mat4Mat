@@ -13,8 +13,17 @@ namespace Systems
         {
             foreach (Enemy enemy in GetListOf<Enemy>())
             {
-                Debug.Log(enemy.rigidbody.velocity);
-                enemy.rigidbody.velocity = enemy.speed * enemy.rigidbody.velocity.normalized;
+                if (enemy.renderer.isVisible)
+                {
+                    if (enemy.rigidbody.velocity == Vector2.zero)
+                    {
+                        enemy.rigidbody.velocity = enemy.speed * -Vector2.right;
+                    }
+                    else
+                    {
+                        enemy.rigidbody.velocity = enemy.speed * enemy.rigidbody.velocity.normalized;
+                    }
+                }
             }
         }
     }

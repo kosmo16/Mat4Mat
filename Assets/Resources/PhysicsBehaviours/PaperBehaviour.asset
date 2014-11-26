@@ -11,8 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: PaperBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 5
-  jumpForce: 50
-  maxSpeed: 5
+  moveForce: 2
+  jumpForce: 65
+  maxSpeed: 4
   mass: .100000001
+  material: {fileID: 0}
   canDestroyObstacles: 0
+  canSpawnThunders: 0
+  canDash: 0
+  canSwim: 0

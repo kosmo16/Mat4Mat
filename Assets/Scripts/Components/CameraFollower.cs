@@ -12,5 +12,8 @@ namespace Components
         public Transform player;
         public float xSmooth;
         public float ySmooth;
+        public float minX;
+        public float maxX;
+        public float minY;
     }
 }

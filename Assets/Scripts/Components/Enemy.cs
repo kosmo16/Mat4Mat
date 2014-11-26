@@ -11,6 +11,7 @@ namespace Components
 
         public void Start()
         {
+            Physics2D.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
             rigidbody.velocity = new Vector2(-speed, 0.0f);
         }
 
