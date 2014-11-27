@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5000000}
-  speed: 5
-  livingTime: 0
+  speed: 10
+  livingTime: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

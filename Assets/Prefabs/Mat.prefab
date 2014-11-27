@@ -8,13 +8,29 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: ThunderSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400002}
+  - 212: {fileID: 21200000}
   - 58: {fileID: 5800000}
+  - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
-  m_Layer: 12
-  m_Name: rat
-  m_TagString: Enemy
+  m_Layer: 11
+  m_Name: Mat
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,9 +42,22 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.82295918, y: -4.21386003, z: 0}
-  m_LocalScale: {x: 2.38193727, y: 2.38193703, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 400002}
+  m_RootOrder: 0
+--- !u!4 &400002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.97267699, y: -3.50090361, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5000000
@@ -36,14 +65,14 @@ Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_GameObject: {fileID: 100002}
+  m_Mass: .100000001
+  m_LinearDrag: 2
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_FixedAngle: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
 --- !u!58 &5800000
@@ -51,12 +80,12 @@ CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .170000002
-  m_Center: {x: 0, y: 0}
+  m_Radius: .349999994
+  m_Center: {x: 0, y: -0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,18 +94,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe0156e09c49c74885b45fea3a07944, type: 3}
+  m_Script: {fileID: 11500000, guid: a04fbc28e26e03f42a79dbaac30cbb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thunderPrefab: {fileID: 11400000, guid: ce8e3b5e88b98e5488cf6b948bd00b91, type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e5f5ca1faec854991c51327af53c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5000000}
-  speed: 3
-  collisionWithObstacle: 0
+  behaviour: {fileID: 11400000, guid: 2cef23a60394ede4494d7f0b865ccdd4, type: 2}
+  thunderSpawner: {fileID: 11400000}
+  score: 0
+  facingRight: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -91,7 +134,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2259184375
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c5c0b279a1de38459d72bed101b7302, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8a365289963271478e676a77f6be93a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -102,6 +145,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100000}
+  m_RootGameObject: {fileID: 100002}
   m_IsPrefabParent: 1
   m_IsExploded: 1

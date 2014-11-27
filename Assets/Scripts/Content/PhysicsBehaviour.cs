@@ -10,8 +10,12 @@ namespace Content
         public float jumpForce;
         public float maxSpeed;
         public float mass;
+        public PhysicMaterial material;
 
         [Header("Special")]
         public bool canDestroyObstacles;
+        public bool canSpawnThunders;
+        public bool canDash;
+        public bool canSwim;
     }
 }

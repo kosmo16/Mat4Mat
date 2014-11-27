@@ -9,10 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
-  m_Layer: 8
-  m_Name: GroundForest
-  m_TagString: Ground
+  - 114: {fileID: 11400000}
+  - 58: {fileID: 5800000}
+  m_Layer: 0
+  m_Name: rubberBall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,22 +25,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .279775858, y: -.354567885, z: 0}
-  m_LocalScale: {x: .965214133, y: .965213478, z: 1}
+  m_LocalPosition: {x: -2.85908079, y: -3.47397518, z: 0}
+  m_LocalScale: {x: .548417807, y: .548417509, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!58 &5800000
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 3.20000005, y: .550000012}
+  m_IsTrigger: 1
+  m_Radius: .449999988
   m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb5ed1a003c36246af2c0e015e3a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  score: 0
+  behaviour: {fileID: 11400000, guid: 77d5137e3fa4a80408808f79ebf16a9e, type: 2}
+  collisionWithPlayer: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -58,10 +74,10 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 3737643545
+  m_SortingLayerID: 2259184375
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0ec581cde2555b4fad7fec6bf856b30, type: 3}
-  m_Color: {r: .75686276, g: .75686276, b: .75686276, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c93940259ec210a44b16ef615985ca77, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

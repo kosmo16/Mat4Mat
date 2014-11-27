@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
-  m_Name: PaperBehaviour
+  m_Name: RubberBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 2
-  jumpForce: 65
-  maxSpeed: 4
-  mass: .100000001
+  moveForce: 50
+  jumpForce: 1200
+  maxSpeed: 5
+  mass: 1
   material: {fileID: 0}
   canDestroyObstacles: 0
   canSpawnThunders: 0
