@@ -1022,7 +1022,7 @@ Transform:
   m_LocalScale: {x: .200000003, y: .200000003, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
 --- !u!1 &594831372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,7 +2071,7 @@ Transform:
   m_LocalScale: {x: 1.41432464, y: 1.37896788, z: 2.85524297}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
 --- !u!1 &1214860777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2567,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6c3db39e3a7694bbaaf6ba65f0fa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftArrowRectangle:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  rightArrowRectangle:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  upArrowRectangle:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  leftArrowTexture: {fileID: 0}
+  rightArrowTexture: {fileID: 0}
+  upArrowTexture: {fileID: 0}
+  groundCheck: {fileID: 0}
 --- !u!1 &1868284031
 GameObject:
   m_ObjectHideFlags: 0
