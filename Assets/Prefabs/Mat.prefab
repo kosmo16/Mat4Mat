@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5000000}
-  behaviour: {fileID: 11400000, guid: 2cef23a60394ede4494d7f0b865ccdd4, type: 2}
+  behaviour: {fileID: 11400000, guid: ebe8ba17c8c3011408d07d65911eb9be, type: 2}
   thunderSpawner: {fileID: 11400000}
   score: 0
   facingRight: 0

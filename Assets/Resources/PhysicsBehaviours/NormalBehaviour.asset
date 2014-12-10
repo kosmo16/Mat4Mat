@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: NormalBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 10
-  jumpForce: 10
+  moveForce: 3
+  jumpForce: 65
   maxSpeed: 5
-  mass: 5
+  mass: .100000001
   material: {fileID: 0}
   canDestroyObstacles: 0
   canSpawnThunders: 0
