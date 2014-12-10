@@ -1,4 +1,5 @@
 ﻿using Components;
+using Framework.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,13 @@ namespace Systems
 {
     public class EnemySystem : Framework.Core.System
     {
+        public Event0 playerLose; 
+
+        public override void Initialize()
+        {
+            playerLose = GetEvent(Event.PlayerLose);
+        }
+
         public override void OnFixedUpdate()
         {
             foreach (Enemy enemy in GetListOf<Enemy>())
@@ -23,6 +31,11 @@ namespace Systems
                     {
                         enemy.rigidbody.velocity = enemy.speed * enemy.rigidbody.velocity.normalized;
                     }
+                }
+
+                if (enemy.collisionWithPlayer)
+                {
+                    playerLose.Report();
                 }
             }
         }

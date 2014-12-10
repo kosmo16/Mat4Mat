@@ -1,24 +1,38 @@
 ﻿using Components;
 using Content;
+using Framework.Events;
 using UnityEngine;
 
 namespace Systems
 {
     public class PlayerControlSystem : Framework.Core.System
     {
+        private Event0 playerLose;
+        private Event0 needClue;
+
         public Rect leftArrowRectangle;
         public Rect rightArrowRectangle;
         public Rect upArrowRectangle;
+        public Rect repeatLevelRectangle;
+        public Rect clueRectangle;
         public Texture2D leftArrowTexture;
         public Texture2D rightArrowTexture;
         public Texture2D upArrowTexture;
+        public Texture2D repeatLevelTexture;
+        public Texture2D clueTexture;
         public Transform groundCheck;		
 
         private bool isMovingLeft = false;
         private bool isMovingRight = false;
         private bool isGrounded = false;
         private bool isJumping = false;
-        
+
+        public override void Initialize()
+        {
+            playerLose = GetEvent(Event.PlayerLose);
+            needClue = GetEvent(Event.NeedClue);
+        }
+
         public override void OnUpdate()
         {
             Player player = GetFirstOrNull<Player>();
@@ -37,6 +51,24 @@ namespace Systems
             MoveLeft(behaviour, rigidbody);
             MoveRight(behaviour, rigidbody);
             Jump(player.rigidbody, player.behaviour);
+            RepeatLevel();
+            Clue();
+        }
+
+        private void Clue()
+        {
+            if (GUI.Button(clueRectangle, clueTexture))
+            {
+                needClue.Report();
+            }
+        }
+
+        private void RepeatLevel()
+        {
+            if (GUI.Button(repeatLevelRectangle, repeatLevelTexture) )
+            {
+                playerLose.Report();
+            }
         }
 
         private void MoveLeft(PhysicsBehaviour behaviour, Rigidbody2D rigidbody)
@@ -47,14 +79,14 @@ namespace Systems
             leftArrowRectangle.width,
             leftArrowRectangle.height);
 
-            Event e = Event.current;
+            UnityEngine.Event e = UnityEngine.Event.current;
 
-            if ((e.type == EventType.MouseDown) && reversedLeftArrowRectangle.Contains(Event.current.mousePosition))
+            if ((e.type == EventType.MouseDown) && reversedLeftArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isMovingLeft = true;
             }
 
-            if (GUI.Button(reversedLeftArrowRectangle, leftArrowTexture) || !reversedLeftArrowRectangle.Contains(Event.current.mousePosition))
+            if (GUI.Button(reversedLeftArrowRectangle, leftArrowTexture) || !reversedLeftArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isMovingLeft = false;
             }
@@ -79,14 +111,14 @@ namespace Systems
                 rightArrowRectangle.width,
                 rightArrowRectangle.height);
 
-            Event e = Event.current;
+            UnityEngine.Event e = UnityEngine.Event.current;
 
-            if ((e.type == EventType.MouseDown) && reversedRightArrowRectangle.Contains(Event.current.mousePosition))
+            if ((e.type == EventType.MouseDown) && reversedRightArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isMovingRight = true;
             }
 
-            if (GUI.Button(reversedRightArrowRectangle, rightArrowTexture) || !reversedRightArrowRectangle.Contains(Event.current.mousePosition))
+            if (GUI.Button(reversedRightArrowRectangle, rightArrowTexture) || !reversedRightArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isMovingRight = false;
             }
@@ -114,14 +146,14 @@ namespace Systems
             isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
 
-            Event e = Event.current;
+            UnityEngine.Event e = UnityEngine.Event.current;
 
-            if ((e.type == EventType.MouseDown) && reversedUpArrowRectangle.Contains(Event.current.mousePosition))
+            if ((e.type == EventType.MouseDown) && reversedUpArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isJumping = true;
             }
 
-            if (GUI.Button(reversedUpArrowRectangle, upArrowTexture) || !reversedUpArrowRectangle.Contains(Event.current.mousePosition))
+            if (GUI.Button(reversedUpArrowRectangle, upArrowTexture) || !reversedUpArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
             {
                 isJumping = false;
             }

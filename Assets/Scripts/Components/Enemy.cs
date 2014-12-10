@@ -8,6 +8,7 @@ namespace Components
         public Rigidbody2D rigidbody;
         public float speed;
         public bool collisionWithObstacle;
+        public bool collisionWithPlayer;
 
         public void Start()
         {
@@ -47,7 +48,7 @@ namespace Components
                     }
                     else
                     {
-                        GameObject.Destroy(collision.gameObject);
+                        collisionWithPlayer = true;
                     }
 
                     break;
