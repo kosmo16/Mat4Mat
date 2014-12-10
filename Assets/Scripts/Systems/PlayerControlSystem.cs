@@ -12,9 +12,12 @@ namespace Systems
         public Texture2D leftArrowTexture;
         public Texture2D rightArrowTexture;
         public Texture2D upArrowTexture;
+        public Transform groundCheck;		
 
         private bool isMovingLeft = false;
         private bool isMovingRight = false;
+        private bool isGrounded = false;
+        private bool isJumping = false;
         
         public override void OnUpdate()
         {
@@ -51,7 +54,7 @@ namespace Systems
                 isMovingLeft = true;
             }
 
-            if (GUI.Button(reversedLeftArrowRectangle, leftArrowTexture))
+            if (GUI.Button(reversedLeftArrowRectangle, leftArrowTexture) || !reversedLeftArrowRectangle.Contains(Event.current.mousePosition))
             {
                 isMovingLeft = false;
             }
@@ -83,7 +86,7 @@ namespace Systems
                 isMovingRight = true;
             }
 
-            if (GUI.Button(reversedRightArrowRectangle, rightArrowTexture))
+            if (GUI.Button(reversedRightArrowRectangle, rightArrowTexture) || !reversedRightArrowRectangle.Contains(Event.current.mousePosition))
             {
                 isMovingRight = false;
             }
@@ -108,14 +111,25 @@ namespace Systems
                 upArrowRectangle.width,
                 upArrowRectangle.height);
 
-            if (GUI.Button(reversedUpArrowRectangle, upArrowTexture))
+            isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+
+
+            Event e = Event.current;
+
+            if ((e.type == EventType.MouseDown) && reversedUpArrowRectangle.Contains(Event.current.mousePosition))
             {
-                rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
+                isJumping = true;
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (GUI.Button(reversedUpArrowRectangle, upArrowTexture) || !reversedUpArrowRectangle.Contains(Event.current.mousePosition))
+            {
+                isJumping = false;
+            }
+
+            if (isJumping && isGrounded)
             {
                 rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
+                isJumping = false;
             }
         }
 
