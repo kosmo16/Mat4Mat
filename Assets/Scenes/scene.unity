@@ -1153,6 +1153,45 @@ Prefab:
   m_RootGameObject: {fileID: 888600370}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &264257788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 264257789}
+  - 114: {fileID: 264257790}
+  m_Layer: 0
+  m_Name: PlayerLoseSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &264257789
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 264257788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 565678728}
+  m_RootOrder: 6
+--- !u!114 &264257790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 264257788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da988effd190cb40b5f5b0a3c11828a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &273391203
 Prefab:
   m_ObjectHideFlags: 0
@@ -2918,6 +2957,7 @@ MonoBehaviour:
   rigidbody: {fileID: 493816003}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!212 &493816006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3419,6 +3459,7 @@ Transform:
   - {fileID: 381479081}
   - {fileID: 1198591400}
   - {fileID: 493988553}
+  - {fileID: 264257789}
   m_Father: {fileID: 1364528604}
   m_RootOrder: 0
 --- !u!1001 &578640997
@@ -3988,7 +4029,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!114 &687122670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4850,7 +4891,7 @@ Transform:
   m_LocalScale: {x: .965214133, y: .965213478, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
 --- !u!1001 &905902791
 Prefab:
   m_ObjectHideFlags: 0
@@ -5329,6 +5370,7 @@ MonoBehaviour:
   rigidbody: {fileID: 966414283}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!212 &966414286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5427,7 +5469,7 @@ Transform:
   m_LocalScale: {x: .965214133, y: .965213478, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!1 &994227318
 GameObject:
   m_ObjectHideFlags: 0
@@ -5852,6 +5894,7 @@ MonoBehaviour:
   rigidbody: {fileID: 1051337214}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!212 &1051337217
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6711,7 +6754,7 @@ Transform:
   - {fileID: 13040132}
   - {fileID: 96380805}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 18
 --- !u!1 &1242349936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6774,6 +6817,7 @@ MonoBehaviour:
   rigidbody: {fileID: 1242349937}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!212 &1242349940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9788,6 +9832,7 @@ MonoBehaviour:
   rigidbody: {fileID: 1895460886}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!212 &1895460889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10258,6 +10303,7 @@ MonoBehaviour:
   rigidbody: {fileID: 1995867847}
   speed: 3
   collisionWithObstacle: 0
+  collisionWithPlayer: 0
 --- !u!50 &1995867847
 Rigidbody2D:
   m_ObjectHideFlags: 0
