@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Name: RockBehaviour
   m_EditorClassIdentifier: 
   moveForce: 1000
-  jumpForce: 4000
+  jumpForce: 0
   maxSpeed: 3
   mass: 10
+  material: {fileID: 0}
   canDestroyObstacles: 1
+  canSpawnThunders: 0
+  canDash: 0
+  canSwim: 0

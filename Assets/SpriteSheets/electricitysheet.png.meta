@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 734a452404a5f1a45868e85a4adc2bdf
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: electricitysheet_0
+    21300002: electricitysheet_1
+    21300004: electricitysheet_2
+    21300006: electricitysheet_3
+    21300008: electricitysheet_4
+    21300010: electricitysheet_5
+    21300012: electricitysheet_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: electricitysheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 55
+        height: 54
+      alignment: 9
+      pivot: {x: .429610312, y: .428306788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 4
+        width: 62
+        height: 68
+      alignment: 9
+      pivot: {x: .492194623, y: .446625471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 58
+        height: 68
+      alignment: 9
+      pivot: {x: .5292027, y: .453742087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 4
+        width: 58
+        height: 68
+      alignment: 9
+      pivot: {x: .541717768, y: .446625471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_4
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 14
+        width: 52
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_5
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 10
+        width: 58
+        height: 54
+      alignment: 9
+      pivot: {x: .479140699, y: .41934514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: electricitysheet_6
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

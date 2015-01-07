@@ -5,7 +5,7 @@ namespace Systems
 {
     public class GatherCollectibleSystem : Framework.Core.System
     {
-        public override void OnFixedUpdate()
+        public override void OnUpdate()
         {
             foreach (Collectible collectible in GetListOf<Collectible>())
             {

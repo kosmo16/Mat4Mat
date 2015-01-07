@@ -28,6 +28,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
+  - 95: {fileID: 9545998}
   m_Layer: 11
   m_Name: Mat
   m_TagString: Player
@@ -114,6 +115,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .349999994
   m_Center: {x: 0, y: -0}
+--- !u!95 &9545998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc35e68d75ae28b42a886db6ca200c33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,7 +178,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 2259184375
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a8a365289963271478e676a77f6be93a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b874822785f5951488d9ee75f47e7f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

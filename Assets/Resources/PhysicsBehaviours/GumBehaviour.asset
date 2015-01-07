@@ -11,8 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: GumBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 100
+  moveForce: 20
   jumpForce: 150
   maxSpeed: 4
   mass: .300000012
+  material: {fileID: 0}
   canDestroyObstacles: 0
+  canSpawnThunders: 0
+  canDash: 0
+  canSwim: 0

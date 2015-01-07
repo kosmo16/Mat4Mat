@@ -17,7 +17,7 @@ namespace Systems
             playerLose = GetEvent(Event.PlayerLose);
         }
 
-        public override void OnFixedUpdate()
+        public override void OnUpdate()
         {
             foreach (Enemy enemy in GetListOf<Enemy>())
             {

@@ -11,5 +11,6 @@ namespace Components
         public ThunderSpawner thunderSpawner;
         public int score;
         public bool facingRight;
+		public Animator animator;
     }
 }

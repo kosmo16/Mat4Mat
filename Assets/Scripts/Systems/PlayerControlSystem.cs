@@ -105,6 +105,8 @@ namespace Systems
 
         private void MoveRight(PhysicsBehaviour behaviour, Rigidbody2D rigidbody)
         {
+			Player player = GetFirstOrNull<Player>();
+
             Rect reversedRightArrowRectangle = new Rect(
                 rightArrowRectangle.xMin,
                 Screen.height - rightArrowRectangle.yMin - rightArrowRectangle.height,
@@ -127,6 +129,10 @@ namespace Systems
             {
                 rigidbody.AddForce(Vector2.right * behaviour.moveForce);
             }
+			else
+			{
+
+			}
 
             if (Mathf.Abs(rigidbody.velocity.x) > behaviour.maxSpeed)
             {
@@ -143,7 +149,7 @@ namespace Systems
                 upArrowRectangle.width,
                 upArrowRectangle.height);
 
-            isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+			isGrounded = true;//Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
 
             UnityEngine.Event e = UnityEngine.Event.current;
@@ -169,12 +175,14 @@ namespace Systems
         {
             Rigidbody2D rigidbody = player.rigidbody;
             PhysicsBehaviour behaviour = player.behaviour;
+			Debug.Log (player.behaviour.name);
             float h = Input.GetAxis("Horizontal");
 
             rigidbody.AddForce(Vector2.right * h * behaviour.moveForce);
             if (h > 0.0f)
             {
                 player.facingRight = true;
+
             }
             else if (h < 0.0f)
             {
