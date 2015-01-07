@@ -78,7 +78,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .430000007, y: .49000001}
+  m_Size: {x: .370000005, y: .49000001}
   m_Center: {x: 0, y: 0}
 --- !u!212 &21203924
 SpriteRenderer:

@@ -27,12 +27,16 @@ namespace Systems
         private bool isMovingRight = false;
         private bool isGrounded = false;
         private bool isJumping = false;
+        private float previousYPosition = 0.0f;
         private float currentJumpCooldown;
 
         public override void Initialize()
         {
             playerLose = GetEvent(Event.PlayerLose);
             needClue = GetEvent(Event.NeedClue);
+
+            Player player = GetFirstOrNull<Player>();
+            previousYPosition = player.transform.position.y;
         }
 
         public override void OnUpdate()
@@ -106,7 +110,7 @@ namespace Systems
 
         private void MoveRight(PhysicsBehaviour behaviour, Rigidbody2D rigidbody)
         {
-			Player player = GetFirstOrNull<Player>();
+            Player player = GetFirstOrNull<Player>();
 
             Rect reversedRightArrowRectangle = new Rect(
                 rightArrowRectangle.xMin,
@@ -125,7 +129,6 @@ namespace Systems
                 }
             }
 
-			}
 
             if (Mathf.Abs(rigidbody.velocity.x) > behaviour.maxSpeed)
             {
@@ -142,19 +145,29 @@ namespace Systems
                 upArrowRectangle.width,
                 upArrowRectangle.height);
 
-			isGrounded = true;//Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-            GUI.Button(reversedUpArrowRectangle, upArrowTexture);
+            Rect mirrowRectangle = new Rect(
+                reversedUpArrowRectangle.xMin,
+                upArrowRectangle.yMin,
+                upArrowRectangle.width,
+                upArrowRectangle.height);
 
+            isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.01f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
+            GUI.Button(reversedUpArrowRectangle, upArrowTexture);
+            Debug.Log(isGrounded);
             foreach (Touch touch in Input.touches)
             {
-                if (upArrowRectangle.Contains(touch.position) && isGrounded 
-                    && currentJumpCooldown <= jumpCooldown)
+                if (mirrowRectangle.Contains(touch.position) 
+                    && isGrounded
+                    && currentJumpCooldown <= 0.0f
+                    && previousYPosition == rigidbody.transform.position.y)
                 {
                     rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
                     currentJumpCooldown = jumpCooldown;
                     break;
                 }
             }
+
+            previousYPosition = rigidbody.transform.position.y;
         }
 
         private void Move(Player player)

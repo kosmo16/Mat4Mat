@@ -29,7 +29,6 @@ namespace Systems
 					}
 				}
 
-				Debug.Log(fixedXPosition.transform.position);
 				fixedXPosition.transform.position = Vector3.MoveTowards(
 					fixedXPosition.transform.position,
 					new Vector3(fixedXPosition.transform.position.x, fixedXPosition.yPosition, fixedXPosition.transform.position.z),
