@@ -23,6 +23,7 @@ namespace Systems
         public Transform groundCheck;
 	    public float jumpCooldown;
 
+        private bool facingRight = true;
         private bool isMovingLeft = false;
         private bool isMovingRight = false;
         private bool isGrounded = false;
@@ -50,6 +51,39 @@ namespace Systems
             //Jump(player.rigidbody, player.behaviour);
             Move(player);
 
+            if (isMovingRight || isMovingLeft)
+            {
+                if (!player.animator.GetBool("MoveRight"))
+                {
+                    player.animator.SetBool("MoveRight", true);
+                    player.animator.CrossFade("mat_move_right", 0.1f);
+
+                    if ((isMovingLeft && facingRight)
+                        || (isMovingRight && !facingRight))
+                    {
+                        Vector3 localScale = player.transform.localScale;
+                        localScale.x *= -1;
+                        player.transform.localScale = localScale;
+
+                        if (isMovingRight)
+                        {
+                            facingRight = true;
+                        }
+                        else
+                        {
+                            facingRight = false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (player.animator.GetBool("MoveRight"))
+                {
+                    player.animator.SetBool("MoveRight", false);
+                    player.animator.CrossFade("mat_idle_right", 0.1f);
+                }
+            }
         }
 
         public void OnGUI()
@@ -91,11 +125,13 @@ namespace Systems
             leftArrowRectangle.height);
 
             GUI.Button(reversedLeftArrowRectangle, leftArrowTexture);
+            isMovingLeft = false;
 
             foreach (Touch touch in Input.touches)
             {
                 if (leftArrowRectangle.Contains(touch.position))
                 {
+                    isMovingLeft = true;
                     rigidbody.AddForce(-Vector2.right * behaviour.moveForce);
                     break;
                 }
@@ -119,11 +155,13 @@ namespace Systems
                 rightArrowRectangle.height);
 
             GUI.Button(reversedRightArrowRectangle, rightArrowTexture);
+            isMovingRight = false;
 
             foreach (Touch touch in Input.touches)
             {
                 if (rightArrowRectangle.Contains(touch.position))
                 {
+                    isMovingRight = true;
                     rigidbody.AddForce(Vector2.right * behaviour.moveForce);
                     break;
                 }
@@ -153,7 +191,7 @@ namespace Systems
 
             isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.01f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
             GUI.Button(reversedUpArrowRectangle, upArrowTexture);
-            Debug.Log(isGrounded);
+
             foreach (Touch touch in Input.touches)
             {
                 if (mirrowRectangle.Contains(touch.position) 
