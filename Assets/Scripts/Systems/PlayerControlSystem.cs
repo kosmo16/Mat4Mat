@@ -20,12 +20,14 @@ namespace Systems
         public Texture2D upArrowTexture;
         public Texture2D repeatLevelTexture;
         public Texture2D clueTexture;
-        public Transform groundCheck;		
+        public Transform groundCheck;
+	    public float jumpCooldown;
 
         private bool isMovingLeft = false;
         private bool isMovingRight = false;
         private bool isGrounded = false;
         private bool isJumping = false;
+        private float currentJumpCooldown;
 
         public override void Initialize()
         {
@@ -35,6 +37,11 @@ namespace Systems
 
         public override void OnUpdate()
         {
+            if (currentJumpCooldown >= 0.0f)
+            {
+                currentJumpCooldown -= DeltaTime;
+            }
+
             Player player = GetFirstOrNull<Player>();
             //Jump(player.rigidbody, player.behaviour);
             Move(player);
@@ -65,7 +72,7 @@ namespace Systems
 
         private void RepeatLevel()
         {
-            if (GUI.Button(repeatLevelRectangle, repeatLevelTexture) )
+            if (GUI.Button(repeatLevelRectangle, repeatLevelTexture))
             {
                 playerLose.Report();
             }
@@ -79,21 +86,15 @@ namespace Systems
             leftArrowRectangle.width,
             leftArrowRectangle.height);
 
-            UnityEngine.Event e = UnityEngine.Event.current;
+            GUI.Button(reversedLeftArrowRectangle, leftArrowTexture);
 
-            if ((e.type == EventType.MouseDown) && reversedLeftArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
+            foreach (Touch touch in Input.touches)
             {
-                isMovingLeft = true;
-            }
-
-            if (GUI.Button(reversedLeftArrowRectangle, leftArrowTexture) || !reversedLeftArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
-            {
-                isMovingLeft = false;
-            }
-
-            if (isMovingLeft)
-            {
-                rigidbody.AddForce(-Vector2.right * behaviour.moveForce);
+                if (leftArrowRectangle.Contains(touch.position))
+                {
+                    rigidbody.AddForce(-Vector2.right * behaviour.moveForce);
+                    break;
+                }
             }
 
             if (Mathf.Abs(rigidbody.velocity.x) > behaviour.maxSpeed)
@@ -113,24 +114,16 @@ namespace Systems
                 rightArrowRectangle.width,
                 rightArrowRectangle.height);
 
-            UnityEngine.Event e = UnityEngine.Event.current;
+            GUI.Button(reversedRightArrowRectangle, rightArrowTexture);
 
-            if ((e.type == EventType.MouseDown) && reversedRightArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
+            foreach (Touch touch in Input.touches)
             {
-                isMovingRight = true;
+                if (rightArrowRectangle.Contains(touch.position))
+                {
+                    rigidbody.AddForce(Vector2.right * behaviour.moveForce);
+                    break;
+                }
             }
-
-            if (GUI.Button(reversedRightArrowRectangle, rightArrowTexture) || !reversedRightArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
-            {
-                isMovingRight = false;
-            }
-
-            if (isMovingRight)
-            {
-                rigidbody.AddForce(Vector2.right * behaviour.moveForce);
-            }
-			else
-			{
 
 			}
 
@@ -150,24 +143,17 @@ namespace Systems
                 upArrowRectangle.height);
 
 			isGrounded = true;//Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+            GUI.Button(reversedUpArrowRectangle, upArrowTexture);
 
-
-            UnityEngine.Event e = UnityEngine.Event.current;
-
-            if ((e.type == EventType.MouseDown) && reversedUpArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
+            foreach (Touch touch in Input.touches)
             {
-                isJumping = true;
-            }
-
-            if (GUI.Button(reversedUpArrowRectangle, upArrowTexture) || !reversedUpArrowRectangle.Contains(UnityEngine.Event.current.mousePosition))
-            {
-                isJumping = false;
-            }
-
-            if (isJumping && isGrounded)
-            {
-                rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
-                isJumping = false;
+                if (upArrowRectangle.Contains(touch.position) && isGrounded 
+                    && currentJumpCooldown <= jumpCooldown)
+                {
+                    rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
+                    currentJumpCooldown = jumpCooldown;
+                    break;
+                }
             }
         }
 
