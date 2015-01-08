@@ -3780,9 +3780,9 @@ GameObject:
   - 61: {fileID: 523277288}
   - 61: {fileID: 523277287}
   - 61: {fileID: 523277286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7055,9 +7055,9 @@ GameObject:
   - 61: {fileID: 956525354}
   - 61: {fileID: 956525353}
   - 61: {fileID: 956525352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7435,9 +7435,9 @@ GameObject:
   - 61: {fileID: 977669243}
   - 61: {fileID: 977669242}
   - 61: {fileID: 977669241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9478,9 +9478,9 @@ GameObject:
   - 61: {fileID: 1235343180}
   - 61: {fileID: 1235343179}
   - 61: {fileID: 1235343178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9668,7 +9668,7 @@ GameObject:
   - 61: {fileID: 1243372001}
   m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12789,6 +12789,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 113818, guid: b402d5a7bc538e94787d5330d4681dd3, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 113818, guid: b402d5a7bc538e94787d5330d4681dd3, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b402d5a7bc538e94787d5330d4681dd3, type: 2}
   m_RootGameObject: {fileID: 1235343177}
@@ -14344,9 +14352,9 @@ GameObject:
   - 61: {fileID: 1956788574}
   - 61: {fileID: 1956788573}
   - 61: {fileID: 1956788572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

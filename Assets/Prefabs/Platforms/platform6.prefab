@@ -12,9 +12,9 @@ GameObject:
   - 61: {fileID: 6170416}
   - 61: {fileID: 6170414}
   - 61: {fileID: 6170412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
