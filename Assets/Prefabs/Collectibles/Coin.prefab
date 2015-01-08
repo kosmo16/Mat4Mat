@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474694}
-  - 114: {fileID: 11474694}
   - 212: {fileID: 21274694}
+  - 114: {fileID: 11474694}
   - 58: {fileID: 5874694}
   m_Layer: 0
   m_Name: Coin
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 4087719925
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d0b4365a3421c7d4196ee92b569ece07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

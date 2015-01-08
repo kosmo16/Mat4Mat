@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 455202}
   - 212: {fileID: 21255202}
-  - 95: {fileID: 9555202}
-  - 58: {fileID: 5855202}
   - 114: {fileID: 11479706}
+  - 58: {fileID: 5855202}
+  - 95: {fileID: 9555202}
   m_Layer: 0
   m_Name: electricity
   m_TagString: Untagged
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 4087719925
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 734a452404a5f1a45868e85a4adc2bdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
