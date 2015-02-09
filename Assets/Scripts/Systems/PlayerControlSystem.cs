@@ -40,7 +40,7 @@ namespace Systems
             previousYPosition = player.transform.position.y;
         }
 
-        public override void OnUpdate()
+        public override void OnFixedUpdate()
         {
             if (currentJumpCooldown >= 0.0f)
             {

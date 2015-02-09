@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: PaperBehaviour
   m_EditorClassIdentifier: 
   moveForce: 2
-  jumpForce: 65
+  jumpForce: 72
   maxSpeed: 1.39999998
   mass: .100000001
   material: {fileID: 0}
