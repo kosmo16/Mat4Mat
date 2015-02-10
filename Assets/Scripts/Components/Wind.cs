@@ -10,6 +10,12 @@ namespace Components
     public class Wind : SystemComponent
     {
         public Vector2 force;
+        public SpriteRenderer spriteRenderer;
+
+        public void Start()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         public void OnTriggerStay2D(Collider2D other)
         {
