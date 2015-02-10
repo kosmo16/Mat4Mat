@@ -24,10 +24,10 @@ namespace Systems
         public Texture2D destroyTexture;
         public Transform groundCheck;
 	    public float jumpCooldown;
-        public float punchDistance = 0.5f;
-        public float speed = 1.0f;
+        public float punchDistance = 1.0f;
+        public float speed = 2.0f;
         public float punchCooldown = 0.2f;
-        public float beforeCooldown = 0.2f;
+        public float beforeCooldown = 0.25f;
 
         private Vector3 positionAfterPunch;
         private bool facingRight = true;
@@ -158,7 +158,7 @@ namespace Systems
                             positionAfterPunch = player.transform.position;
                             positionAfterPunch = target;
                             player.destroyingObject.collider2D.enabled = false;
-                            GameObject.Destroy(player.destroyingObject.transform.parent.gameObject, 0.5f);
+                            GameObject.Destroy(player.destroyingObject.transform.gameObject, 0.5f);
                             currentBeforeCooldown = beforeCooldown;
                             //TODO Akcje do zniszczenia.
                             break;
@@ -175,7 +175,7 @@ namespace Systems
                         positionAfterPunch = player.transform.position;
                         positionAfterPunch = target;
                         player.destroyingObject.collider2D.enabled = false;
-                        GameObject.Destroy(player.destroyingObject.transform.parent.gameObject, 1.0f);
+                        GameObject.Destroy(player.destroyingObject.transform.gameObject, 1.0f);
                         currentBeforeCooldown = beforeCooldown;
                     }
                 }
