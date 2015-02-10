@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: NormalBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 70
-  jumpForce: 1000
-  maxSpeed: 1.39999998
+  moveForce: 35
+  jumpForce: 800
+  maxSpeed: 1
   mass: 1
   material: {fileID: 0}
   canDestroyObstacles: 0

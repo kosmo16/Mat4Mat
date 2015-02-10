@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 50
   jumpForce: 1200
-  maxSpeed: 5
+  maxSpeed: 1
   mass: 1
   material: {fileID: 0}
   canDestroyObstacles: 0

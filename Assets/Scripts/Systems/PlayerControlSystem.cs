@@ -199,10 +199,21 @@ namespace Systems
                     && currentJumpCooldown <= 0.0f
                     && previousYPosition == rigidbody.transform.position.y)
                 {
+                    rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
                     rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
                     currentJumpCooldown = jumpCooldown;
                     break;
                 }
+            }
+
+            if (Input.GetButtonDown("Jump")
+                    && isGrounded
+                    && currentJumpCooldown <= 0.0f
+                    && previousYPosition == rigidbody.transform.position.y)
+            {
+                    rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
+                    rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
+                    currentJumpCooldown = jumpCooldown;
             }
 
             previousYPosition = rigidbody.transform.position.y;

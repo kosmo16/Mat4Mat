@@ -47,6 +47,7 @@ namespace Systems
 
         private void FollowPlayer(CameraFollower follower)
         {
+
             float targetX = Mathf.Lerp(
                 follower.transform.position.x,
                 follower.player.position.x,
@@ -57,16 +58,15 @@ namespace Systems
                 follower.player.position.y,
                 follower.ySmooth * DeltaTime);
 
-            if (isFar)
-            {
-                targetX = Mathf.Clamp(targetX, follower.minXfar, follower.maxXfar);
-                targetY = Mathf.Clamp(targetY, follower.minYfar, float.MaxValue);
-            }
-            else
-            {
-                targetX = Mathf.Clamp(targetX, follower.minXnear, follower.maxXnear);
-                targetY = Mathf.Clamp(targetY, follower.minYnear, float.MaxValue);
-            }
+            float aspectRatio = (float) Screen.width / (float)Screen.height;
+
+            targetX = Mathf.Clamp(targetX,
+                follower.left.position.x + aspectRatio * Camera.main.orthographicSize,
+                follower.right.position.x - aspectRatio * Camera.main.orthographicSize);
+
+            targetY = Mathf.Clamp(targetY,
+                follower.down.position.y + Camera.main.orthographicSize,
+                follower.up.position.y - Camera.main.orthographicSize);
             
             follower.transform.position = new Vector3(targetX, targetY, follower.transform.position.z);
         }

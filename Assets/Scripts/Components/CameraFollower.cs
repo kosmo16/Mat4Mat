@@ -12,11 +12,9 @@ namespace Components
         public Transform player;
         public float xSmooth;
         public float ySmooth;
-        public float minXnear;
-        public float maxXnear;
-        public float minYnear;
-        public float minXfar;
-        public float maxXfar;
-        public float minYfar;
+        public Transform up;
+        public Transform down;
+        public Transform left;
+        public Transform right;
     }
 }

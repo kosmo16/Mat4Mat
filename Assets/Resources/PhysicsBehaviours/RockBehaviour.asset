@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f1a4557bcb93e49a17dad7aece515f, type: 3}
   m_Name: RockBehaviour
   m_EditorClassIdentifier: 
-  moveForce: 1000
+  moveForce: 500
   jumpForce: 0
-  maxSpeed: 1.39999998
+  maxSpeed: .5
   mass: 10
   material: {fileID: 0}
   canDestroyObstacles: 1
