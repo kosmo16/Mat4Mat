@@ -1,52 +1,52 @@
 fileFormatVersion: 2
-guid: b874822785f5951488d9ee75f47e7f82
+guid: 8d653597c3743c34ebdc9c439c6a4866
 TextureImporter:
   fileIDToRecycleName:
-    21300000: mat_idle_0
-    21300002: mat_idle_1
-    21300004: mat_idle_2
-    21300006: mat_idle_3
-    21300008: mat_idle_4
-    21300010: mat_idle_5
-    21300012: mat_idle_6
-    21300014: mat_idle_7
-    21300016: mat_idle_8
-    21300018: mat_idle_9
-    21300020: mat_idle_10
-    21300022: mat_idle_11
-    21300024: mat_idle_12
-    21300026: mat_idle_13
-    21300028: mat_idle_14
-    21300030: mat_idle_15
-    21300032: mat_idle_16
-    21300034: mat_idle_17
-    21300036: mat_idle_18
-    21300038: mat_idle_19
-    21300040: mat_idle_20
-    21300042: mat_idle_21
-    21300044: mat_idle_22
-    21300046: mat_idle_23
-    21300048: mat_idle_24
-    21300050: mat_idle_25
-    21300052: mat_idle_26
-    21300054: mat_idle_27
-    21300056: mat_idle_28
-    21300058: mat_idle_29
-    21300060: mat_idle_30
-    21300062: mat_idle_31
-    21300064: mat_idle_32
-    21300066: mat_idle_33
-    21300068: mat_idle_34
-    21300070: mat_idle_35
-    21300072: mat_idle_36
-    21300074: mat_idle_37
-    21300076: mat_idle_38
-    21300078: mat_idle_39
-    21300080: mat_idle_40
-    21300082: mat_idle_41
-    21300084: mat_idle_42
-    21300086: mat_idle_43
-    21300088: mat_idle_44
+    21300000: mat_default_idle_0
+    21300002: mat_default_idle_1
+    21300004: mat_default_idle_2
+    21300006: mat_default_idle_3
+    21300008: mat_default_idle_4
+    21300010: mat_default_idle_5
+    21300012: mat_default_idle_6
+    21300014: mat_default_idle_7
+    21300016: mat_default_idle_8
+    21300018: mat_default_idle_9
+    21300020: mat_default_idle_10
+    21300022: mat_default_idle_11
+    21300024: mat_default_idle_12
+    21300026: mat_default_idle_13
+    21300028: mat_default_idle_14
+    21300030: mat_default_idle_15
+    21300032: mat_default_idle_16
+    21300034: mat_default_idle_17
+    21300036: mat_default_idle_18
+    21300038: mat_default_idle_19
+    21300040: mat_default_idle_20
+    21300042: mat_default_idle_21
+    21300044: mat_default_idle_22
+    21300046: mat_default_idle_23
+    21300048: mat_default_idle_24
+    21300050: mat_default_idle_25
+    21300052: mat_default_idle_26
+    21300054: mat_default_idle_27
+    21300056: mat_default_idle_28
+    21300058: mat_default_idle_29
+    21300060: mat_default_idle_30
+    21300062: mat_default_idle_31
+    21300064: mat_default_idle_32
+    21300066: mat_default_idle_33
+    21300068: mat_default_idle_34
+    21300070: mat_default_idle_35
+    21300072: mat_default_idle_36
+    21300074: mat_default_idle_37
+    21300076: mat_default_idle_38
+    21300078: mat_default_idle_39
+    21300080: mat_default_idle_40
+    21300082: mat_default_idle_41
+    21300084: mat_default_idle_42
+    21300086: mat_default_idle_43
+    21300088: mat_default_idle_44
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -66,7 +66,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
@@ -88,453 +88,453 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: mat_idle_0
+    - name: mat_default_idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 408
-        width: 64
-        height: 100
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_1
+    - name: mat_default_idle_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 408
-        width: 64
-        height: 100
+        x: 44
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_2
+    - name: mat_default_idle_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 408
-        width: 64
-        height: 100
+        x: 88
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_3
+    - name: mat_default_idle_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 408
-        width: 64
-        height: 100
+        x: 132
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_4
+    - name: mat_default_idle_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 408
-        width: 64
-        height: 100
+        x: 176
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_5
+    - name: mat_default_idle_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 408
-        width: 64
-        height: 100
+        x: 220
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_6
+    - name: mat_default_idle_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 408
-        width: 64
-        height: 100
+        x: 264
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_7
+    - name: mat_default_idle_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 408
-        width: 64
-        height: 100
+        x: 308
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_8
+    - name: mat_default_idle_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 408
-        width: 64
-        height: 100
+        x: 352
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_9
+    - name: mat_default_idle_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 408
-        width: 64
-        height: 100
+        x: 396
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_10
+    - name: mat_default_idle_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 408
-        width: 64
-        height: 100
+        x: 440
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_11
+    - name: mat_default_idle_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 306
-        width: 64
-        height: 100
+        x: 484
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_12
+    - name: mat_default_idle_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 306
-        width: 64
-        height: 100
+        x: 528
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_13
+    - name: mat_default_idle_13
       rect:
         serializedVersion: 2
-        x: 128
-        y: 306
-        width: 64
-        height: 100
+        x: 572
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_14
+    - name: mat_default_idle_14
       rect:
         serializedVersion: 2
-        x: 192
-        y: 306
-        width: 64
-        height: 100
+        x: 616
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_15
+    - name: mat_default_idle_15
       rect:
         serializedVersion: 2
-        x: 256
-        y: 306
-        width: 64
-        height: 100
+        x: 660
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_16
+    - name: mat_default_idle_16
       rect:
         serializedVersion: 2
-        x: 320
-        y: 306
-        width: 64
-        height: 100
+        x: 704
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_17
+    - name: mat_default_idle_17
       rect:
         serializedVersion: 2
-        x: 384
-        y: 306
-        width: 64
-        height: 100
+        x: 748
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_18
+    - name: mat_default_idle_18
       rect:
         serializedVersion: 2
-        x: 448
-        y: 306
-        width: 64
-        height: 100
+        x: 792
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_19
+    - name: mat_default_idle_19
       rect:
         serializedVersion: 2
-        x: 512
-        y: 306
-        width: 64
-        height: 100
+        x: 836
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_20
+    - name: mat_default_idle_20
       rect:
         serializedVersion: 2
-        x: 576
-        y: 306
-        width: 64
-        height: 100
+        x: 880
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_21
+    - name: mat_default_idle_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 204
-        width: 64
-        height: 100
+        x: 924
+        y: 71
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_22
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_23
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_24
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_25
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_26
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_27
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_28
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 204
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_29
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_30
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_31
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_32
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_33
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_34
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_35
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_36
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 102
-        width: 64
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_37
+    - name: mat_default_idle_22
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_38
+    - name: mat_default_idle_23
       rect:
         serializedVersion: 2
-        x: 64
+        x: 44
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_39
+    - name: mat_default_idle_24
       rect:
         serializedVersion: 2
-        x: 128
+        x: 88
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_40
+    - name: mat_default_idle_25
       rect:
         serializedVersion: 2
-        x: 192
+        x: 132
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_41
+    - name: mat_default_idle_26
       rect:
         serializedVersion: 2
-        x: 256
+        x: 176
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_42
+    - name: mat_default_idle_27
       rect:
         serializedVersion: 2
-        x: 320
+        x: 220
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_43
+    - name: mat_default_idle_28
       rect:
         serializedVersion: 2
-        x: 384
+        x: 264
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: mat_idle_44
+    - name: mat_default_idle_29
       rect:
         serializedVersion: 2
-        x: 448
+        x: 308
         y: 0
-        width: 64
-        height: 100
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_30
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_31
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_32
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_33
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_34
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_35
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_36
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_37
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_38
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_39
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_40
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_41
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_42
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_43
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 0
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mat_default_idle_44
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 0
+        width: 44
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

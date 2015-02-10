@@ -40,6 +40,28 @@ namespace Systems
             previousYPosition = player.transform.position.y;
         }
 
+        public override void OnUpdate()
+        {
+            Player player = GetFirstOrNull<Player>();
+
+            if (!player.animator.GetBool("Move") && player.rigidbody.velocity.x > 0.0f)
+            {
+                player.animator.SetBool("Move", true);
+            }
+            else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
+            {
+                player.animator.SetBool("Move", false);
+            }
+
+            if ((player.rigidbody.velocity.x > 0.0f && player.transform.localScale.x < 0.0f)
+                   || (player.rigidbody.velocity.x < 0.0f && player.transform.localScale.x > 0.0f))
+            {
+                Vector3 localScale = player.transform.localScale;
+                localScale.x *= -1;
+                player.transform.localScale = localScale;
+            }
+        }
+
         public override void OnFixedUpdate()
         {
             if (currentJumpCooldown >= 0.0f)
@@ -51,38 +73,13 @@ namespace Systems
             //Jump(player.rigidbody, player.behaviour);
             Move(player);
 
-            if (isMovingRight || isMovingLeft)
+            if (!player.animator.GetBool("Move") && Mathf.Abs(player.rigidbody.velocity.x) > 0.0f)
             {
-                if (!player.animator.GetBool("MoveRight"))
-                {
-                    player.animator.SetBool("MoveRight", true);
-                    player.animator.CrossFade("mat_move_right", 0.1f);
-
-                    if ((isMovingLeft && facingRight)
-                        || (isMovingRight && !facingRight))
-                    {
-                        Vector3 localScale = player.transform.localScale;
-                        localScale.x *= -1;
-                        player.transform.localScale = localScale;
-
-                        if (isMovingRight)
-                        {
-                            facingRight = true;
-                        }
-                        else
-                        {
-                            facingRight = false;
-                        }
-                    }
-                }
+                player.animator.SetBool("Move", true);
             }
-            else
+            else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
             {
-                if (player.animator.GetBool("MoveRight"))
-                {
-                    player.animator.SetBool("MoveRight", false);
-                    player.animator.CrossFade("mat_idle_right", 0.1f);
-                }
+                player.animator.SetBool("Move", false);
             }
         }
 
@@ -225,16 +222,20 @@ namespace Systems
             PhysicsBehaviour behaviour = player.behaviour;
 			Debug.Log (player.behaviour.name);
             float h = Input.GetAxis("Horizontal");
+            isMovingLeft = false;
+            isMovingRight = false;
 
             rigidbody.AddForce(Vector2.right * h * behaviour.moveForce);
             if (h > 0.0f)
             {
                 player.facingRight = true;
+                isMovingRight = true;
 
             }
             else if (h < 0.0f)
             {
                 player.facingRight = false;
+                isMovingLeft = true;
             }
 
             if (Mathf.Abs(rigidbody.velocity.x) > behaviour.maxSpeed)
