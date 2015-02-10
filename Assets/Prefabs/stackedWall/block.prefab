@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 415244}
   - 212: {fileID: 21215244}
   - 61: {fileID: 6115244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3737643545
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e1ccc5c5f9448aa40a392fff21370ced, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

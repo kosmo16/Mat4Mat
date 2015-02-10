@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GumBehaviour
   m_EditorClassIdentifier: 
   moveForce: 20
-  jumpForce: 150
+  jumpForce: 350
   maxSpeed: 1
   mass: .300000012
   material: {fileID: 0}
