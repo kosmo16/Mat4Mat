@@ -15,21 +15,31 @@ namespace Systems
         public Rect upArrowRectangle;
         public Rect repeatLevelRectangle;
         public Rect clueRectangle;
+        public Rect specialRectangle;
         public Texture2D leftArrowTexture;
         public Texture2D rightArrowTexture;
         public Texture2D upArrowTexture;
         public Texture2D repeatLevelTexture;
         public Texture2D clueTexture;
+        public Texture2D destroyTexture;
         public Transform groundCheck;
 	    public float jumpCooldown;
+        public float punchDistance = 0.5f;
+        public float speed = 1.0f;
+        public float punchCooldown = 0.2f;
+        public float beforeCooldown = 0.2f;
 
+        private Vector3 positionAfterPunch;
         private bool facingRight = true;
         private bool isMovingLeft = false;
         private bool isMovingRight = false;
         private bool isGrounded = false;
         private bool isJumping = false;
-        private float previousYPosition = 0.0f;
+        private float previousYPosition;
+        private float currentPunchCooldown;
+        private float currentBeforeCooldown;
         private float currentJumpCooldown;
+        
 
         public override void Initialize()
         {
@@ -37,6 +47,7 @@ namespace Systems
             needClue = GetEvent(Event.NeedClue);
 
             Player player = GetFirstOrNull<Player>();
+            player.isActive = true;
             previousYPosition = player.transform.position.y;
         }
 
@@ -44,43 +55,59 @@ namespace Systems
         {
             Player player = GetFirstOrNull<Player>();
 
-            if (!player.animator.GetBool("Move") && player.rigidbody.velocity.x > 0.0f)
+            if (punchCooldown > 0.0f)
+            {
+                currentPunchCooldown -= DeltaTime;
+                currentPunchCooldown = Mathf.Clamp(currentPunchCooldown, 0.0f, punchCooldown);  
+            }
+
+            currentBeforeCooldown -= DeltaTime;
+            currentBeforeCooldown = Mathf.Clamp(currentBeforeCooldown, 0.0f, beforeCooldown);
+ 
+
+            if (!player.isActive
+                && currentBeforeCooldown <= 0.0f)
+            {
+                player.transform.position = Vector3.MoveTowards(player.transform.position, positionAfterPunch, DeltaTime * speed);
+
+                if (player.transform.position == positionAfterPunch)
+                {
+                    player.isActive = true;
+                    player.animator.SetBool("Punch", false);
+                    currentPunchCooldown = punchCooldown;
+                }
+            }
+
+            if (currentPunchCooldown == 0.0f && player.isActive && !player.animator.GetBool("Move") && player.rigidbody.velocity.x > 0.0f)
             {
                 player.animator.SetBool("Move", true);
             }
-            else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
+            else if (!player.isActive || (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f))
             {
                 player.animator.SetBool("Move", false);
-            }
-
-            if ((player.rigidbody.velocity.x > 0.0f && player.transform.localScale.x < 0.0f)
-                   || (player.rigidbody.velocity.x < 0.0f && player.transform.localScale.x > 0.0f))
-            {
-                Vector3 localScale = player.transform.localScale;
-                localScale.x *= -1;
-                player.transform.localScale = localScale;
             }
         }
 
         public override void OnFixedUpdate()
         {
+            Player player = GetFirstOrNull<Player>();
+
             if (currentJumpCooldown >= 0.0f)
             {
                 currentJumpCooldown -= DeltaTime;
             }
 
-            Player player = GetFirstOrNull<Player>();
             //Jump(player.rigidbody, player.behaviour);
             Move(player);
 
-            if (!player.animator.GetBool("Move") && Mathf.Abs(player.rigidbody.velocity.x) > 0.0f)
-            {
-                player.animator.SetBool("Move", true);
-            }
-            else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
-            {
-                player.animator.SetBool("Move", false);
-            }
+            //if (!player.animator.GetBool("Move") && Mathf.Abs(player.rigidbody.velocity.x) > 0.0f)
+            //{
+            //    player.animator.SetBool("Move", true);
+            //}
+            //else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
+            //{
+            //    player.animator.SetBool("Move", false);
+            //}
         }
 
         public void OnGUI()
@@ -90,11 +117,69 @@ namespace Systems
             PhysicsBehaviour behaviour = player.behaviour;
             GUI.backgroundColor = Color.clear;
 
+            DestroyingObject(player);
             MoveLeft(behaviour, rigidbody);
             MoveRight(behaviour, rigidbody);
             Jump(player.rigidbody, player.behaviour);
             RepeatLevel();
             Clue();
+        }
+
+        private void DestroyingObject(Player player)
+        {
+            Rect reversedSpecialRectangle = new Rect(
+               Screen.width - specialRectangle.xMin - specialRectangle.width,
+               Screen.height - specialRectangle.yMin - specialRectangle.height,
+               specialRectangle.width,
+               specialRectangle.height);
+
+            Rect mirrowRectangle = new Rect(
+               reversedSpecialRectangle.xMin,
+               specialRectangle.yMin,
+               specialRectangle.width,
+               specialRectangle.height);
+
+
+            if (player.behaviour.canDestroyObstacles && player.destroyingObject != null)
+            {
+                GUI.Button(reversedSpecialRectangle, destroyTexture);
+
+                if (player.isActive)
+                {
+                    foreach (Touch touch in Input.touches)
+                    {
+                        if (mirrowRectangle.Contains(touch.position))
+                        {
+                            player.destroyingObject.animator.SetBool("Destroyed", true);
+                            player.animator.SetBool("Punch", true);
+                            player.isActive = false;
+                            Vector3 target = player.transform.position;
+                            target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                            positionAfterPunch = player.transform.position;
+                            positionAfterPunch = target;
+                            player.destroyingObject.collider2D.enabled = false;
+                            GameObject.Destroy(player.destroyingObject.transform.parent.gameObject, 0.5f);
+                            currentBeforeCooldown = beforeCooldown;
+                            //TODO Akcje do zniszczenia.
+                            break;
+                        }
+                    }
+
+                    if (Input.GetButton("Fire1"))
+                    {
+                        player.destroyingObject.animator.SetBool("Destroyed", true);
+                        player.animator.SetBool("Punch", true);
+                        player.isActive = false;
+                        Vector3 target = player.transform.position;
+                        target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                        positionAfterPunch = player.transform.position;
+                        positionAfterPunch = target;
+                        player.destroyingObject.collider2D.enabled = false;
+                        GameObject.Destroy(player.destroyingObject.transform.parent.gameObject, 1.0f);
+                        currentBeforeCooldown = beforeCooldown;
+                    }
+                }
+            }
         }
 
         private void Clue()
@@ -115,6 +200,8 @@ namespace Systems
 
         private void MoveLeft(PhysicsBehaviour behaviour, Rigidbody2D rigidbody)
         {
+            Player player = GetFirstOrNull<Player>();
+
             Rect reversedLeftArrowRectangle = new Rect(
             leftArrowRectangle.xMin,
             Screen.height - leftArrowRectangle.yMin - leftArrowRectangle.height,
@@ -122,15 +209,24 @@ namespace Systems
             leftArrowRectangle.height);
 
             GUI.Button(reversedLeftArrowRectangle, leftArrowTexture);
-            isMovingLeft = false;
 
-            foreach (Touch touch in Input.touches)
+            if (player.isActive)
             {
-                if (leftArrowRectangle.Contains(touch.position))
+                foreach (Touch touch in Input.touches)
                 {
-                    isMovingLeft = true;
-                    rigidbody.AddForce(-Vector2.right * behaviour.moveForce);
-                    break;
+                    if (leftArrowRectangle.Contains(touch.position))
+                    {
+                        if (player.transform.localScale.x > 0.0f)
+                        {
+                            Vector3 localScale = player.transform.localScale;
+                            localScale.x *= -1;
+                            player.transform.localScale = localScale;
+                            break;
+                        }
+
+                        rigidbody.AddForce(-Vector2.right * behaviour.moveForce);
+                        break;
+                    }
                 }
             }
 
@@ -154,13 +250,24 @@ namespace Systems
             GUI.Button(reversedRightArrowRectangle, rightArrowTexture);
             isMovingRight = false;
 
-            foreach (Touch touch in Input.touches)
+            if (player.isActive)
             {
-                if (rightArrowRectangle.Contains(touch.position))
+
+                foreach (Touch touch in Input.touches)
                 {
-                    isMovingRight = true;
-                    rigidbody.AddForce(Vector2.right * behaviour.moveForce);
-                    break;
+                    if (rightArrowRectangle.Contains(touch.position))
+                    {
+                        if (player.transform.localScale.x < 0.0f)
+                        {
+                            Vector3 localScale = player.transform.localScale;
+                            localScale.x *= -1;
+                            player.transform.localScale = localScale;
+                            break;
+                        }
+
+                        rigidbody.AddForce(Vector2.right * behaviour.moveForce);
+                        break;
+                    }
                 }
             }
 
@@ -174,6 +281,8 @@ namespace Systems
 
         private void Jump(Rigidbody2D rigidbody, PhysicsBehaviour behaviour)
         {
+            Player player = GetFirstOrNull<Player>();
+
             Rect reversedUpArrowRectangle = new Rect(
                 Screen.width - upArrowRectangle.xMin - upArrowRectangle.width,
                 Screen.height - upArrowRectangle.yMin - upArrowRectangle.height,
@@ -189,17 +298,21 @@ namespace Systems
             isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.01f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
             GUI.Button(reversedUpArrowRectangle, upArrowTexture);
 
-            foreach (Touch touch in Input.touches)
+            if (player.isActive)
             {
-                if (mirrowRectangle.Contains(touch.position) 
-                    && isGrounded
-                    && currentJumpCooldown <= 0.0f
-                    && previousYPosition == rigidbody.transform.position.y)
+
+                foreach (Touch touch in Input.touches)
                 {
-                    rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
-                    rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
-                    currentJumpCooldown = jumpCooldown;
-                    break;
+                    if (mirrowRectangle.Contains(touch.position)
+                        && isGrounded
+                        && currentJumpCooldown <= 0.0f
+                        && previousYPosition == rigidbody.transform.position.y)
+                    {
+                        rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
+                        rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
+                        currentJumpCooldown = jumpCooldown;
+                        break;
+                    }
                 }
             }
 

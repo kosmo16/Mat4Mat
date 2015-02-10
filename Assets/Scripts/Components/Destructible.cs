@@ -10,32 +10,30 @@ namespace Components
 		public Collider2D collider;
 		public float destroyTime;
 
-        public void OnCollisionEnter2D(Collision2D collision)
+
+        public void OnTriggerEnter2D(Collider2D collision)
         {
 			if (collision.gameObject.tag == "Player")
             {
-                PhysicsBehaviour behaviour = collision.gameObject.GetComponent<Player>().behaviour;
+                Player player = collision.gameObject.GetComponent<Player>();
+                PhysicsBehaviour behaviour = player.behaviour;
 
                 if (behaviour.canDestroyObstacles)
                 {
-					animator.SetBool("Destroyed", true);
-					Physics2D.IgnoreCollision(collision.collider, collider);
-					GameObject.Destroy(transform.parent.gameObject, destroyTime);
+                    player.destroyingObject = this;
                 }
             }
         }
 
-		public void OnCollisionStay2D(Collision2D collision)
-		{
-			if (collision.gameObject.tag == "Player")
-			{
-				PhysicsBehaviour behaviour = collision.gameObject.GetComponent<Player>().behaviour;
-				
-				if (behaviour.canDestroyObstacles)
-				{
-					Physics2D.IgnoreCollision(collision.collider, collider);
-				}
-			}
-		}
+        public void OnTriggerExit2D(Collider2D collision)
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+            PhysicsBehaviour behaviour = player.behaviour;
+
+            if (behaviour.canDestroyObstacles)
+            {
+                player.destroyingObject = null;
+            }
+        }
     }
 }
