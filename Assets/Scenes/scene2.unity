@@ -903,6 +903,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
   m_RootGameObject: {fileID: 952952484}
@@ -1817,6 +1825,14 @@ Prefab:
     - target: {fileID: 415244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
@@ -3179,12 +3195,10 @@ MonoBehaviour:
   player: {fileID: 498810031}
   xSmooth: 200
   ySmooth: 200
-  minXnear: -10
-  maxXnear: 30
-  minYnear: -5
-  minXfar: 6.5
-  maxXfar: 7
-  minYfar: 2
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!81 &462477146
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5050,9 +5064,9 @@ GameObject:
   - 4: {fileID: 663588988}
   - 212: {fileID: 663588987}
   - 61: {fileID: 663588986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7393,9 +7407,9 @@ GameObject:
   - 4: {fileID: 952952487}
   - 212: {fileID: 952952486}
   - 61: {fileID: 952952485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8630,6 +8644,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
   m_RootGameObject: {fileID: 1231540443}
@@ -9827,7 +9849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04fbc28e26e03f42a79dbaac30cbb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thunderPrefab: {fileID: 11400000, guid: ce8e3b5e88b98e5488cf6b948bd00b91, type: 2}
+  thunderPrefab: {fileID: 0}
 --- !u!4 &1181108787
 Transform:
   m_ObjectHideFlags: 0
@@ -10180,9 +10202,9 @@ GameObject:
   - 4: {fileID: 1231540446}
   - 212: {fileID: 1231540445}
   - 61: {fileID: 1231540444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11243,6 +11265,14 @@ Prefab:
     - target: {fileID: 415244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
@@ -13204,9 +13234,9 @@ GameObject:
   - 4: {fileID: 1609436113}
   - 212: {fileID: 1609436112}
   - 61: {fileID: 1609436111}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13539,9 +13569,9 @@ GameObject:
   - 4: {fileID: 1646149497}
   - 212: {fileID: 1646149496}
   - 61: {fileID: 1646149495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: block
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16970,6 +17000,14 @@ Prefab:
     - target: {fileID: 415244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 115244, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abb266b7cfb13be4193177da6047e11d, type: 2}
