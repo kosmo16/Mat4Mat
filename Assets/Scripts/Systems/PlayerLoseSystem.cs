@@ -5,6 +5,9 @@ namespace Systems
 {
     public class PlayerLoseSystem : Framework.Core.System
     {
+        private string[] levelsOrder = new string[] { "scene0", "scene0rock", "scene1rock", "scene1gum", "scene2" };
+        private int currentLevelNumber = 0;
+
         public override void Initialize()
         {
             SubscribeEvent(Event.PlayerLose, OnPlayerLose);
@@ -16,6 +19,9 @@ namespace Systems
             {
                 if (exit.isReached)
                 {
+                    currentLevelNumber++;
+                    currentLevelNumber %= levelsOrder.Length;
+
                     OnPlayerLose();
                 }
             }
@@ -23,7 +29,7 @@ namespace Systems
 
         private void OnPlayerLose()
         {
-            Application.LoadLevel("scene1rock");
+            Application.LoadLevel(levelsOrder[currentLevelNumber]);
         }
     }
 }
