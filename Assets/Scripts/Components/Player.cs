@@ -14,5 +14,6 @@ namespace Components
 		public Animator animator;
         public Destructible destroyingObject;
         public bool isActive = true;
+        public SteelWall dashObject;
     }
 }

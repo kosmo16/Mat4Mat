@@ -22,6 +22,7 @@ namespace Systems
         public Texture2D repeatLevelTexture;
         public Texture2D clueTexture;
         public Texture2D destroyTexture;
+        public Texture2D dashTexture;
         public Transform groundCheck;
 	    public float jumpCooldown;
         public float punchDistance = 1.0f;
@@ -73,7 +74,17 @@ namespace Systems
                 if (player.transform.position == positionAfterPunch)
                 {
                     player.isActive = true;
-                    player.animator.SetBool("Punch", false);
+
+                    if (player.behaviour.canDash)
+                    {
+                        player.animator.SetBool("Dash", false);
+                        player.dashObject.collider2D.enabled = true;
+                    }
+                    else
+                    {
+                        player.animator.SetBool("Punch", false);
+                    }
+
                     currentPunchCooldown = punchCooldown;
                 }
             }
@@ -97,17 +108,7 @@ namespace Systems
                 currentJumpCooldown -= DeltaTime;
             }
 
-            //Jump(player.rigidbody, player.behaviour);
             Move(player);
-
-            //if (!player.animator.GetBool("Move") && Mathf.Abs(player.rigidbody.velocity.x) > 0.0f)
-            //{
-            //    player.animator.SetBool("Move", true);
-            //}
-            //else if (player.animator.GetBool("Move") && player.rigidbody.velocity.x == 0.0f)
-            //{
-            //    player.animator.SetBool("Move", false);
-            //}
         }
 
         public void OnGUI()
@@ -118,11 +119,64 @@ namespace Systems
             GUI.backgroundColor = Color.clear;
 
             DestroyingObject(player);
+            DashingObject(player);
             MoveLeft(behaviour, rigidbody);
             MoveRight(behaviour, rigidbody);
             Jump(player.rigidbody, player.behaviour);
             RepeatLevel();
             Clue();
+        }
+
+        private void DashingObject(Player player)
+        {
+            Rect reversedSpecialRectangle = new Rect(
+              Screen.width - specialRectangle.xMin - specialRectangle.width,
+              Screen.height - specialRectangle.yMin - specialRectangle.height,
+              specialRectangle.width,
+              specialRectangle.height);
+
+            Rect mirrowRectangle = new Rect(
+               reversedSpecialRectangle.xMin,
+               specialRectangle.yMin,
+               specialRectangle.width,
+               specialRectangle.height);
+
+
+            if (player.behaviour.canDash && player.dashObject != null)
+            {
+                GUI.Button(reversedSpecialRectangle, dashTexture);
+
+                if (player.isActive)
+                {
+                    foreach (Touch touch in Input.touches)
+                    {
+                        if (mirrowRectangle.Contains(touch.position))
+                        {
+                            player.animator.SetBool("Dash", true);
+                            player.isActive = false;
+                            Vector3 target = player.transform.position;
+                            target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                            positionAfterPunch = player.transform.position;
+                            positionAfterPunch = target;
+                            player.dashObject.collider2D.enabled = false;
+                            currentBeforeCooldown = beforeCooldown;
+                            break;
+                        }
+                    }
+
+                    if (Input.GetButton("Fire1"))
+                    {
+                        player.animator.SetBool("Dash", true);
+                        player.isActive = false;
+                        Vector3 target = player.transform.position;
+                        target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                        positionAfterPunch = player.transform.position;
+                        positionAfterPunch = target;
+                        player.destroyingObject.collider2D.enabled = false;
+                        currentBeforeCooldown = beforeCooldown;
+                    }
+                }
+            }
         }
 
         private void DestroyingObject(Player player)
