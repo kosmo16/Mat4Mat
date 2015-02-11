@@ -78,7 +78,7 @@ namespace Systems
                 }
             }
 
-            if (currentPunchCooldown == 0.0f && player.isActive && !player.animator.GetBool("Move") && player.rigidbody.velocity.x > 0.0f)
+            if (currentPunchCooldown == 0.0f && player.isActive && !player.animator.GetBool("Move") && Mathf.Abs(player.rigidbody.velocity.x) > 0.0f)
             {
                 player.animator.SetBool("Move", true);
             }
@@ -160,7 +160,6 @@ namespace Systems
                             player.destroyingObject.collider2D.enabled = false;
                             GameObject.Destroy(player.destroyingObject.transform.gameObject, 0.5f);
                             currentBeforeCooldown = beforeCooldown;
-                            //TODO Akcje do zniszczenia.
                             break;
                         }
                     }
@@ -248,11 +247,9 @@ namespace Systems
                 rightArrowRectangle.height);
 
             GUI.Button(reversedRightArrowRectangle, rightArrowTexture);
-            isMovingRight = false;
 
             if (player.isActive)
             {
-
                 foreach (Touch touch in Input.touches)
                 {
                     if (rightArrowRectangle.Contains(touch.position))
