@@ -247,6 +247,7 @@ MonoBehaviour:
   fullBar: {fileID: 2800000, guid: 9bfb54e8181483d4fa895df8674959ed, type: 3}
   emptyBar: {fileID: 2800000, guid: e17f9a9ff2940ff418107d37ea6f3696, type: 3}
   maxTime: 30
+  addTime: 15
   offset: {x: 11, y: 9}
 --- !u!1 &93714626
 GameObject:
@@ -6238,16 +6239,16 @@ MonoBehaviour:
     height: 100
   specialRectangle:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
+    x: 120
+    y: 2
+    width: 100
+    height: 100
   leftArrowTexture: {fileID: 2800000, guid: 220de15ffcd53064d9e81aeabd7ce069, type: 3}
   rightArrowTexture: {fileID: 2800000, guid: 0f67af166d8c4e3468540a6b56eb7f33, type: 3}
   upArrowTexture: {fileID: 2800000, guid: a11fac7c53a38ce43b537fb70720aa39, type: 3}
   repeatLevelTexture: {fileID: 2800000, guid: 779b1ae0b2ad4194fa7e5a0bbc2c85ed, type: 3}
   clueTexture: {fileID: 2800000, guid: 50ad28779791fca4087c2bba92fe9de8, type: 3}
-  destroyTexture: {fileID: 0}
+  destroyTexture: {fileID: 2800000, guid: f1103095857c5f94bba966d2783e7b3c, type: 3}
   groundCheck: {fileID: 2084620559}
   jumpCooldown: .200000003
   punchDistance: 2
