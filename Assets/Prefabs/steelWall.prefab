@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 498622}
   - 212: {fileID: 21298622}
   - 61: {fileID: 6198622}
+  - 114: {fileID: 11422570}
   m_Layer: 0
   m_Name: steelWall
   m_TagString: Untagged
@@ -40,6 +41,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .439999998, y: 1.5}
   m_Center: {x: 0, y: 0}
+--- !u!114 &11422570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6417d9bbbd1870a44bbb446c797d1d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21298622
 SpriteRenderer:
   m_ObjectHideFlags: 1
