@@ -56,6 +56,9 @@ namespace Systems
         {
             Player player = GetFirstOrNull<Player>();
 
+            player.animator.SetFloat("Velocity", player.rigidbody.velocity.y);
+
+
             if (punchCooldown > 0.0f)
             {
                 currentPunchCooldown -= DeltaTime;
@@ -347,6 +350,16 @@ namespace Systems
                 upArrowRectangle.height);
 
             isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.01f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
+
+            if (isGrounded)
+            {
+                player.animator.SetBool("Jump", false);
+            }
+            else
+            {
+                player.animator.SetBool("Jump", true);
+            }
+
             GUI.Button(reversedUpArrowRectangle, upArrowTexture);
 
             if (player.isActive)
@@ -359,6 +372,7 @@ namespace Systems
                         && currentJumpCooldown <= 0.0f
                         && previousYPosition == rigidbody.transform.position.y)
                     {
+                        player.animator.SetBool("Jump", true);
                         rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
                         rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
                         currentJumpCooldown = jumpCooldown;
@@ -372,6 +386,7 @@ namespace Systems
                     && currentJumpCooldown <= 0.0f
                     && previousYPosition == rigidbody.transform.position.y)
             {
+                    player.animator.SetBool("Jump", true);
                     rigidbody.velocity = Vector2.ClampMagnitude(rigidbody.velocity, 0.1f * behaviour.maxSpeed);
                     rigidbody.AddForce(new Vector2(0f, behaviour.jumpForce));
                     currentJumpCooldown = jumpCooldown;
