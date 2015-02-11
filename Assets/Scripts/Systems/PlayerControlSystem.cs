@@ -203,7 +203,7 @@ namespace Systems
 
                 if (player.isActive)
                 {
-                    foreach (Touch touch in Input.touches)
+                    /*foreach (Touch touch in Input.touches)
                     {
                         if (mirrowRectangle.Contains(touch.position))
                         {
@@ -219,7 +219,7 @@ namespace Systems
                             currentBeforeCooldown = beforeCooldown;
                             break;
                         }
-                    }
+                    }*/
 
                     if (Input.GetButton("Fire1"))
                     {

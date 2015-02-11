@@ -706,7 +706,7 @@ MonoBehaviour:
   width: 50
   height: 300
   offset: 30
-  speed: .0199999996
+  speed: .00400000019
 --- !u!1 &444396867
 GameObject:
   m_ObjectHideFlags: 0
