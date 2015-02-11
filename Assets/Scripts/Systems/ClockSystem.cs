@@ -15,6 +15,7 @@ namespace Systems
         public Texture2D fullBar;
         public Texture2D emptyBar;
         public float maxTime = 30.0f;
+        public float addTime = 15.0f;
         public Vector2 offset = new Vector2(11, 9);
 
         private Event0 playerLose;
@@ -22,8 +23,15 @@ namespace Systems
 
         public override void Initialize()
         {
+            SubscribeEvent(Event.GatherCoin, OnGatherCoin);
+
             playerLose = GetEvent(Event.PlayerLose);
             currentTime = maxTime;
+        }
+
+        private void OnGatherCoin()
+        {
+            currentTime = Mathf.Clamp(currentTime + addTime, 0.0f, maxTime);
         }
 
         public override void OnFixedUpdate()

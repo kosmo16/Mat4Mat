@@ -3,6 +3,7 @@
     public enum Event
     {
         PlayerLose,
-        NeedClue
+        NeedClue,
+        GatherCoin
     }
 }

@@ -1,10 +1,18 @@
 ﻿using Components;
+using Framework.Events;
 using UnityEngine;
 
 namespace Systems
 {
     public class GatherCollectibleSystem : Framework.Core.System
     {
+        private Event0 gatherCoin;
+
+        public override void Initialize()
+        {
+            gatherCoin = GetEvent(Event.GatherCoin);
+        }
+
         public override void OnUpdate()
         {
             foreach (Collectible collectible in GetListOf<Collectible>())
@@ -35,6 +43,8 @@ namespace Systems
                     else if (collectible.type == CollectibleType.Coin)
                     {
                         player.score++;
+                        gatherCoin.Report();
+
                     }
 
                     GameObject.Destroy(collectible.gameObject);
