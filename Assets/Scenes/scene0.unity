@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f65fdea637c1af48bcf4f1a2261bdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: .0599999987
 --- !u!1 &580378526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,7 +5457,7 @@ MonoBehaviour:
   destroyTexture: {fileID: 0}
   groundCheck: {fileID: 2084620559}
   jumpCooldown: .200000003
-  punchDistance: .5
+  punchDistance: 2
   speed: 1
   punchCooldown: .200000003
   beforeCooldown: .200000003
