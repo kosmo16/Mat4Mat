@@ -12,6 +12,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene0.unity
   - enabled: 1
+    path: Assets/Scenes/scene0electric.unity
+  - enabled: 1
     path: Assets/Scenes/scene0rock.unity
   - enabled: 1
     path: Assets/Scenes/scene1gum.unity
