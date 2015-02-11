@@ -50,7 +50,6 @@ namespace Systems
             int width = fullBar.width;
 
             int targetWidth = (int)((float) width * ratio);
-            Debug.Log(targetWidth);
             Texture2D targetTexture = new Texture2D(basicBar.width, basicBar.height);
             targetTexture.SetPixels32(basicBar.GetPixels32());
             targetTexture.SetPixels((int)offset.x, (int)offset.y, targetWidth, fullBar.height, fullBar.GetPixels(0, 0, targetWidth, fullBar.height));
