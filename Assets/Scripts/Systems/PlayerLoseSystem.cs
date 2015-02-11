@@ -8,9 +8,9 @@ namespace Systems
         public Sprite openExit;
         public Sprite closeExit;
         public int numberOfCoins;
+        public int nextLevelNumber;
 
-        private string[] levelsOrder = new string[] { "scene0", "scene0rock", "scene1rock", "scene1gum", "scene2" };
-        private int currentLevelNumber = 0;
+        private string[] levelsOrder = new string[] { "scene0", "scene0electric", "scene0rock", "scene1gum", "scene1rock", "scene2" };
 
         public override void Initialize()
         {
@@ -38,9 +38,6 @@ namespace Systems
 
                     if (exit.isReached)
                     {
-                        currentLevelNumber++;
-                        currentLevelNumber %= levelsOrder.Length;
-
                         OnPlayerLose();
                     }
                 }
@@ -49,7 +46,7 @@ namespace Systems
 
         private void OnPlayerLose()
         {
-            Application.LoadLevel(levelsOrder[currentLevelNumber]);
+            Application.LoadLevel(levelsOrder[nextLevelNumber]);
         }
     }
 }

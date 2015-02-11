@@ -5517,6 +5517,7 @@ MonoBehaviour:
   openExit: {fileID: 21300000, guid: 23d5a9cc64e8e784880946304e4f2904, type: 3}
   closeExit: {fileID: 21300000, guid: 01fd4e8c99e5ea04599993c396fcd731, type: 3}
   numberOfCoins: 9
+  nextLevelNumber: 3
 --- !u!1 &1540545212
 GameObject:
   m_ObjectHideFlags: 0
