@@ -2227,7 +2227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &795908614
 Prefab:
   m_ObjectHideFlags: 0
@@ -4529,13 +4529,63 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434866, guid: 91b43643666f4024d9d1db2c287a9212, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91b43643666f4024d9d1db2c287a9212, type: 2}
   m_RootGameObject: {fileID: 789767806}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1496686872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1496686873}
+  - 114: {fileID: 1496686874}
+  m_Layer: 0
+  m_Name: ClockSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496686873
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496686872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1547941070}
+  m_RootOrder: 12
+--- !u!114 &1496686874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496686872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de57d16f2845654abca679c4b6df28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect:
+    serializedVersion: 2
+    x: 92
+    y: 10
+    width: 395
+    height: 48
+  basicBar: {fileID: 2800000, guid: adc1c0fb24dc1ee46b05a7974ec3122b, type: 3}
+  fullBar: {fileID: 2800000, guid: 9bfb54e8181483d4fa895df8674959ed, type: 3}
+  emptyBar: {fileID: 2800000, guid: e17f9a9ff2940ff418107d37ea6f3696, type: 3}
+  maxTime: 30
+  offset: {x: 11, y: 9}
 --- !u!1001 &1500134473
 Prefab:
   m_ObjectHideFlags: 0
@@ -4706,6 +4756,7 @@ Transform:
   - {fileID: 1138473236}
   - {fileID: 917657772}
   - {fileID: 437201392}
+  - {fileID: 1496686873}
   m_Father: {fileID: 855251327}
   m_RootOrder: 0
 --- !u!1001 &1572866981
@@ -5021,7 +5072,7 @@ Transform:
   - {fileID: 1414547646}
   - {fileID: 725373259}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1001 &1635441633
 Prefab:
   m_ObjectHideFlags: 0
