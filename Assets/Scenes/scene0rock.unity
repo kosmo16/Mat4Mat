@@ -384,7 +384,7 @@ Transform:
   m_PrefabInternal: {fileID: 1500134473}
   m_GameObject: {fileID: 286070299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2299995, y: -2.36999989, z: 0}
+  m_LocalPosition: {x: 31.8400002, y: -2.36999989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986947160}
@@ -411,7 +411,7 @@ Transform:
   m_PrefabInternal: {fileID: 1500134473}
   m_GameObject: {fileID: 314116099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.03999996, y: -2.19999981, z: 0}
+  m_LocalPosition: {x: 6.23999977, y: -2.20000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 986947160}
@@ -3109,6 +3109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReached: 0
+  isOpen: 0
 --- !u!212 &889883938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4370,7 +4371,7 @@ Transform:
   m_PrefabInternal: {fileID: 1390659370}
   m_GameObject: {fileID: 1202734371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44000006, y: 5.71000004, z: 0}
+  m_LocalPosition: {x: 1.44000006, y: 6.23000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 942023158}
@@ -4782,7 +4783,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: 82afaa2497e8f9043bf7f6f358587e8d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.71000004
+      value: 6.23000002
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: 82afaa2497e8f9043bf7f6f358587e8d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5292,6 +5293,18 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -3.17000008
       objectReference: {fileID: 0}
+    - target: {fileID: 448868, guid: 645f7e90acc24b844a8293c31bfa7bf3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.23999977
+      objectReference: {fileID: 0}
+    - target: {fileID: 448868, guid: 645f7e90acc24b844a8293c31bfa7bf3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.20000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 448870, guid: 645f7e90acc24b844a8293c31bfa7bf3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 31.8400002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 645f7e90acc24b844a8293c31bfa7bf3, type: 2}
   m_RootGameObject: {fileID: 986947159}
@@ -5365,6 +5378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da988effd190cb40b5f5b0a3c11828a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openExit: {fileID: 21300000, guid: 23d5a9cc64e8e784880946304e4f2904, type: 3}
+  closeExit: {fileID: 21300000, guid: 01fd4e8c99e5ea04599993c396fcd731, type: 3}
+  numberOfCoins: 8
 --- !u!1 &1540545212
 GameObject:
   m_ObjectHideFlags: 0
