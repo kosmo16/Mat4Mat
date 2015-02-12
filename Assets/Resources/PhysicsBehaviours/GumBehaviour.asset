@@ -19,4 +19,4 @@ MonoBehaviour:
   canDestroyObstacles: 0
   canSpawnThunders: 0
   canDash: 0
-  canSwim: 0
+  canSwim: 1

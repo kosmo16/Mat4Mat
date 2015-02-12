@@ -14,13 +14,14 @@ namespace Systems
         public Rect rightArrowRectangle;
         public Rect upArrowRectangle;
         public Rect repeatLevelRectangle;
-        public Rect clueRectangle;
+        public Rect leaveRectangle;
         public Rect specialRectangle;
         public Texture2D leftArrowTexture;
         public Texture2D rightArrowTexture;
         public Texture2D upArrowTexture;
+        public Texture2D upArrowGreyTexture;
         public Texture2D repeatLevelTexture;
-        public Texture2D clueTexture;
+        public Texture2D leaveTexture;
         public Texture2D destroyTexture;
         public Texture2D dashTexture;
         public Transform groundCheck;
@@ -158,7 +159,8 @@ namespace Systems
                             player.animator.SetBool("Dash", true);
                             player.isActive = false;
                             Vector3 target = player.transform.position;
-                            target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                            float offset = player.dashObject.transform.position.x - player.transform.position.x;
+                            target.x += offset + Mathf.Sign(offset) * 0.55f;
                             positionAfterPunch = player.transform.position;
                             positionAfterPunch = target;
                             player.dashObject.collider2D.enabled = false;
@@ -241,9 +243,15 @@ namespace Systems
 
         private void Clue()
         {
-            if (GUI.Button(clueRectangle, clueTexture))
+            Rect reversedLeaveRectangle = new Rect(
+                Screen.width - leaveRectangle.xMin - leaveRectangle.width,
+                leaveRectangle.yMin,
+                leaveRectangle.width,
+                upArrowRectangle.height);
+
+            if (GUI.Button(reversedLeaveRectangle, leaveTexture))
             {
-                needClue.Report();
+                Application.LoadLevel("levelMenu");
             }
         }
 
@@ -361,7 +369,15 @@ namespace Systems
                 player.animator.SetBool("Jump", true);
             }
 
-            GUI.Button(reversedUpArrowRectangle, upArrowTexture);
+            if (player.behaviour.canDestroyObstacles)
+            {
+                GUI.Button(reversedUpArrowRectangle, upArrowGreyTexture);
+            }
+            else
+            {
+
+                GUI.Button(reversedUpArrowRectangle, upArrowTexture);
+            }
 
             if (player.isActive)
             {

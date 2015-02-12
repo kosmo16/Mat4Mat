@@ -11,7 +11,7 @@ namespace Systems
         public int numberOfCoins;
         public int nextLevelNumber;
 
-        private string[] levelsOrder = new string[] { "scene0", "scene0rock", "scene1rock" ,"scene0electric", "scene1gum", "scene1rock", "scene2" };
+        private string[] levelsOrder = new string[] { "scene0", "scene0rock", "scene1rock" ,"scene2", "scene1gum", "scene0electric" };
 
         public override void Initialize()
         {

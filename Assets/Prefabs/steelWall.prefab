@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21298622}
   - 61: {fileID: 6198622}
   - 114: {fileID: 11422570}
+  - 61: {fileID: 6110186}
   m_Layer: 0
   m_Name: steelWall
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6198622
+--- !u!61 &6110186
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -38,6 +39,17 @@ BoxCollider2D:
   m_GameObject: {fileID: 198622}
   m_Enabled: 1
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.5, y: 1.5}
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6198622
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198622}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 1c7c0723413299d439bece046f5c72cb, type: 2}
   m_IsTrigger: 0
   m_Size: {x: .439999998, y: 1.5}
   m_Center: {x: 0, y: 0}

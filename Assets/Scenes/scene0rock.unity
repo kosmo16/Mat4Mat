@@ -1491,7 +1491,7 @@ Transform:
   - {fileID: 529948498}
   - {fileID: 212917462}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1 &549060201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ Transform:
   - {fileID: 910762890}
   - {fileID: 1058700999}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!1 &993540376
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,9 +6659,9 @@ MonoBehaviour:
     y: 2
     width: 100
     height: 100
-  clueRectangle:
+  leaveRectangle:
     serializedVersion: 2
-    x: 120
+    x: 20
     y: 2
     width: 100
     height: 100
@@ -6674,10 +6674,11 @@ MonoBehaviour:
   leftArrowTexture: {fileID: 2800000, guid: 220de15ffcd53064d9e81aeabd7ce069, type: 3}
   rightArrowTexture: {fileID: 2800000, guid: 0f67af166d8c4e3468540a6b56eb7f33, type: 3}
   upArrowTexture: {fileID: 2800000, guid: a11fac7c53a38ce43b537fb70720aa39, type: 3}
+  upArrowGreyTexture: {fileID: 2800000, guid: 8f4e622142985d0448edc0876d8fab21, type: 3}
   repeatLevelTexture: {fileID: 2800000, guid: 779b1ae0b2ad4194fa7e5a0bbc2c85ed, type: 3}
-  clueTexture: {fileID: 2800000, guid: 50ad28779791fca4087c2bba92fe9de8, type: 3}
+  leaveTexture: {fileID: 2800000, guid: 4d77f39a0c93bf243aaf35ae487c9c5e, type: 3}
   destroyTexture: {fileID: 2800000, guid: f1103095857c5f94bba966d2783e7b3c, type: 3}
-  dashTexture: {fileID: 0}
+  dashTexture: {fileID: 2800000, guid: 859e7f72fd7088d419818006e6aa3592, type: 3}
   groundCheck: {fileID: 2084620559}
   jumpCooldown: .200000003
   punchDistance: 2

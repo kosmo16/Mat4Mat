@@ -47,9 +47,9 @@ namespace Systems
 						{
 							player.animator.SetBool("Stone", false);
 							player.animator.SetBool("Default", false);
-							player.animator.SetBool("Paper", false);
+							player.animator.SetBool("Paper", true);
 							player.animator.SetBool("Rubber", false);
-                            player.animator.SetBool("Electricity", true);
+                            player.animator.SetBool("Electricity", false);
 						}
 						else if (player.behaviour.canDash)
 						{

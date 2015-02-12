@@ -15,36 +15,38 @@ public class LevelMenuGUI : MonoBehaviour {
 
     }
 
-    void OnGUI()
+    public void OnLevel1()
     {
-        // Make a background box
-        GUI.Box(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 180, 200, 400), "Level Menu");
+        Application.LoadLevel("scene0");
+    }
 
-        // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-        if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 - 125, 160, 60), "Level 1"))
-        {
-            Application.LoadLevel("scene0");
-        }
+    public void OnLevel2()
+    {
+        Application.LoadLevel("scene0rock");
+    }
 
-        // Make the second button.
-        if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 - 55, 160, 60), "Level 2"))
-        {
-            Application.LoadLevel("scene0rock");
-        }
+    public void OnLevel3()
+    {
+        Application.LoadLevel("scene1rock");
+    }
 
-		if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 + 15, 160, 60), "Level 3"))
-		{
-			Application.LoadLevel("scene1rock");
-		}
+    public void OnLevel4()
+    {
+        Application.LoadLevel("scene2");
+    }
 
-		if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 + 85, 160, 60), "Level 4"))
-		{
-			Application.LoadLevel("scene1gum");
-		}
+    public void OnLevel5()
+    {
+        Application.LoadLevel("scene1gum");
+    }
 
-		if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 + 155, 160, 60), "Wstecz"))
-		{
-			Application.LoadLevel("mainMenu");
-		}
+    public void OnLevel6()
+    {
+        Application.LoadLevel("scene0electric");
+    }
+
+    public void OnBack()
+    {
+        Application.LoadLevel("mainMenu");
     }
 }
