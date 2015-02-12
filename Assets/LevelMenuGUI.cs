@@ -23,18 +23,18 @@ public class LevelMenuGUI : MonoBehaviour {
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
         if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 - 125, 160, 60), "Level 1"))
         {
-            Application.LoadLevel("scene0rock");
+            Application.LoadLevel("scene0");
         }
 
         // Make the second button.
         if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 - 55, 160, 60), "Level 2"))
         {
-            Application.LoadLevel("scene1rock");
+            Application.LoadLevel("scene0rock");
         }
 
 		if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 + 15, 160, 60), "Level 3"))
 		{
-			Application.LoadLevel("scene2");
+			Application.LoadLevel("scene1rock");
 		}
 
 		if (GUI.Button(new Rect(Screen.width / 2 - 100 + 20, Screen.height / 2 + 85, 160, 60), "Level 4"))

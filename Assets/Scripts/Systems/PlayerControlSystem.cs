@@ -167,17 +167,17 @@ namespace Systems
                         }
                     }
 
-                    if (Input.GetButton("Fire1"))
-                    {
-                        player.animator.SetBool("Dash", true);
-                        player.isActive = false;
-                        Vector3 target = player.transform.position;
-                        target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
-                        positionAfterPunch = player.transform.position;
-                        positionAfterPunch = target;
-                        player.destroyingObject.collider2D.enabled = false;
-                        currentBeforeCooldown = beforeCooldown;
-                    }
+                    //if (Input.GetButton("Fire1"))
+                    //{
+                    //    player.animator.SetBool("Dash", true);
+                    //    player.isActive = false;
+                    //    Vector3 target = player.transform.position;
+                    //    target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                    //    positionAfterPunch = player.transform.position;
+                    //    positionAfterPunch = target;
+                    //    player.destroyingObject.collider2D.enabled = false;
+                    //    currentBeforeCooldown = beforeCooldown;
+                    //}
                 }
             }
         }
@@ -203,7 +203,7 @@ namespace Systems
 
                 if (player.isActive)
                 {
-                    /*foreach (Touch touch in Input.touches)
+                    foreach (Touch touch in Input.touches)
                     {
                         if (mirrowRectangle.Contains(touch.position))
                         {
@@ -211,29 +211,30 @@ namespace Systems
                             player.animator.SetBool("Punch", true);
                             player.isActive = false;
                             Vector3 target = player.transform.position;
-                            target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                            float offset = player.destroyingObject.transform.position.x - player.transform.position.x;
+                            target.x += offset + Mathf.Sign(offset) * 0.55f;
                             positionAfterPunch = player.transform.position;
                             positionAfterPunch = target;
                             player.destroyingObject.collider2D.enabled = false;
-                            GameObject.Destroy(player.destroyingObject.transform.gameObject, 0.5f);
+                            GameObject.Destroy(player.destroyingObject.transform.gameObject, 1.0f);
                             currentBeforeCooldown = beforeCooldown;
                             break;
                         }
-                    }*/
-
-                    if (Input.GetButton("Fire1"))
-                    {
-                        player.destroyingObject.animator.SetBool("Destroyed", true);
-                        player.animator.SetBool("Punch", true);
-                        player.isActive = false;
-                        Vector3 target = player.transform.position;
-                        target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
-                        positionAfterPunch = player.transform.position;
-                        positionAfterPunch = target;
-                        player.destroyingObject.collider2D.enabled = false;
-                        GameObject.Destroy(player.destroyingObject.transform.gameObject, 1.0f);
-                        currentBeforeCooldown = beforeCooldown;
                     }
+
+                    //if (Input.GetButton("Fire1"))
+                    //{
+                    //    player.destroyingObject.animator.SetBool("Destroyed", true);
+                    //    player.animator.SetBool("Punch", true);
+                    //    player.isActive = false;
+                    //    Vector3 target = player.transform.position;
+                    //    target.x += Mathf.Sign(player.destroyingObject.transform.position.x - player.transform.position.x) * punchDistance;
+                    //    positionAfterPunch = player.transform.position;
+                    //    positionAfterPunch = target;
+                    //    player.destroyingObject.collider2D.enabled = false;
+                    //    GameObject.Destroy(player.destroyingObject.transform.gameObject, 1.0f);
+                    //    currentBeforeCooldown = beforeCooldown;
+                    //}
                 }
             }
         }
@@ -349,7 +350,7 @@ namespace Systems
                 upArrowRectangle.width,
                 upArrowRectangle.height);
 
-            isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.01f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
+            isGrounded = Physics2D.Raycast(groundCheck.transform.position, -Vector2.up, 0.02f, 1 << LayerMask.NameToLayer("Ground")).collider != null;
 
             if (isGrounded)
             {

@@ -1,4 +1,5 @@
 ﻿using Components;
+using System.Linq;
 using UnityEngine;
 
 namespace Systems
@@ -10,11 +11,13 @@ namespace Systems
         public int numberOfCoins;
         public int nextLevelNumber;
 
-        private string[] levelsOrder = new string[] { "scene0", "scene0electric", "scene0rock", "scene1gum", "scene1rock", "scene2" };
+        private string[] levelsOrder = new string[] { "scene0", "scene0rock", "scene1rock" ,"scene0electric", "scene1gum", "scene1rock", "scene2" };
 
         public override void Initialize()
         {
             SubscribeEvent(Event.PlayerLose, OnPlayerLose);
+
+            nextLevelNumber = (levelsOrder.ToList().IndexOf(Application.loadedLevelName) + 1) % 7;
 
             foreach (Exit exit in GetListOf<Exit>())
             {
@@ -38,15 +41,20 @@ namespace Systems
 
                     if (exit.isReached)
                     {
-                        OnPlayerLose();
+                        LoadNextLevel();
                     }
                 }
             }
         }
 
-        private void OnPlayerLose()
+        private void LoadNextLevel()
         {
             Application.LoadLevel(levelsOrder[nextLevelNumber]);
+        }
+
+        private void OnPlayerLose()
+        {
+            Application.LoadLevel(Application.loadedLevelName);
         }
     }
 }

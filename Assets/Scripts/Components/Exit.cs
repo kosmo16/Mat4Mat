@@ -12,7 +12,7 @@ namespace Components
         public bool isReached;
         public bool isOpen;
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Player")
             {
@@ -20,7 +20,7 @@ namespace Components
             }
         }
 
-        public void OnCollisionExit2D(Collision2D collision)
+        public void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "Player")
             {
